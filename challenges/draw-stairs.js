@@ -14,7 +14,11 @@
 */
 
 function drawStairs(n) {
-
+    if (n > 100) return console.log('n is too large!');
+    if (n < 1) return console.log('n is too small!');
+    for (let i = 1; i <= n; i += 1) {
+        console.log(('*'.repeat(i) + ' '.repeat(n - i)).split('').reverse().join(''));
+    }
 }
 
 
