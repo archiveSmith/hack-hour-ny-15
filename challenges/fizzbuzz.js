@@ -17,7 +17,21 @@
 //                     16 ]
 
 function fizzbuzz(num) {
-
+  const devinHester = [];
+  let counter = 1;
+  while (counter <= num) {
+    if (counter % 3 === 0 && counter % 5 === 0) {
+      devinHester.push('fizzbuzz');
+    } else if (counter % 3 === 0) {
+      devinHester.push('fizz');
+    } else if (counter % 5 === 0) {
+      devinHester.push('buzz');
+    } else {
+      devinHester.push(counter);
+    }
+    counter++;
+  }
+  return devinHester;
 }
 
 module.exports = fizzbuzz;
