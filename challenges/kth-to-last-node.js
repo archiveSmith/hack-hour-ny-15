@@ -17,12 +17,26 @@
  */
 
 function Node(val) {
-  this.value = val;
-  this.next = null;
+    this.value = val;
+    this.next = null;
 }
 
 function kthToLastNode(k, head) {
+    const cacheArray = [];
 
+    function innerNav(k, currentNode) {
+        cacheArray.push(currentNode);
+        if (currentNode.next === null) {
+            if (k > cacheArray.length || k === 0) {
+                return "value not in range";
+            }
+            return cacheArray[cacheArray.length - k];
+        }
+        return innerNav(k, currentNode.next);
+    }
+    return innerNav(k, head);
 }
 
-module.exports = {Node: Node, kthToLastNode: kthToLastNode};
+
+
+module.exports = { Node: Node, kthToLastNode: kthToLastNode };
