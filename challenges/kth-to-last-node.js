@@ -16,12 +16,22 @@
  * kthToLastNode(2, a); -> returns 'D' (the value on the second to last node)
  */
 
+
 function Node(val) {
   this.value = val;
   this.next = null;
 }
 
 function kthToLastNode(k, head) {
+  let currentNode = head
+  let myArr = [currentNode]
+  while (currentNode.next) {
+   myArr.push(currentNode.next);
+    currentNode = currentNode.next
+  }
+  let foundNode = myArr[myArr.length-k];
+  return foundNode.value
+
 
 }
 
