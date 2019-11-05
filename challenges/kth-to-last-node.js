@@ -16,6 +16,32 @@
  * kthToLastNode(2, a); -> returns 'D' (the value on the second to last node)
  */
 
+function LinkedList() {
+  // head will be the top of the list
+  // we'll define it as null for now
+  this.head = null;
+  this.length = 0;
+  
+    this.add = function(data) {
+    var nodeToAdd = new Node(data),
+        nodeToCheck = this.head;
+    // if the head is null
+    if(!nodeToCheck) {
+      this.head = nodeToAdd;
+      this.length++;
+      return nodeToAdd;
+    }
+    // loop until we find the end
+    while(nodeToCheck.next) {
+      nodeToCheck = nodeToCheck.next;
+    }
+    // once were at the end of the list
+    nodeToCheck.next = nodeToAdd;
+    this.length++;
+    return nodeToAdd;
+  }
+}
+
 function Node(val) {
   this.value = val;
   this.next = null;
@@ -45,3 +71,4 @@ d.next = e;
 console.log(kthToLastNode(2, a)); // returns 'D' (the value on the second to last node)
 
 module.exports = { Node: Node, kthToLastNode: kthToLastNode };
+
