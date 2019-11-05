@@ -34,14 +34,17 @@ function Node(val) {
 
 
 function kthToLastNode(k, head) {
-  // let currentIndex = 0;
+  if (!head || length < 0 || k > length - 1) return null;
+
+  let currentIndex = 0;
+  const index = length - k;
   let currentNode = head;
 
   while (currentNode) {
-    if (currentNode.next === tail) {
+    if (currentIndex === index) {
       return currentNode;
     }
-    // currentIndex++;
+    currentIndex++;
     currentNode = currentNode.next;
   }
 
