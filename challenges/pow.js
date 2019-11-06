@@ -2,37 +2,22 @@
  * Use recursion!
  */
 
-function pow(base, power, value = 1) {
-    let counter = 0
+function pow(base, power) {
     //base case is if you've returned the number of times you're supposed to multiply, or if power is 0
-    if (counter === power) {
-        return value
+    //any number that goes to the zeroth pwoer will always be 1
+    //edge case
+    if (power === 1) {
+        return base
     }
 
-    //any number that goes to the zeroth pwoer will always be 1
     if (power === 0) {
         return 1
     }
 
-    const exponential = () => {
-    //now increase your counter 
-    //this is how instances should play out 2  ^ 1
-     //multiply 2 *= 1 = 2
-     //4 *= 2 = 8
-     //we want to keep multiplying these two 
-     if (counter != power) {
-        counter ++
-        value *= base
-        console.log("counter", counter, "base", base, "value", value)
-        return pow(base, power, value)
-     }
-    console.log("value becomes", value)
-    
-    }
+    return base * pow(base, power - 1) 
 
-    return exponential()
 }
 
-console.log(pow(2, 3, 1))
+console.log(pow(2, 3))
 
 module.exports = pow;
