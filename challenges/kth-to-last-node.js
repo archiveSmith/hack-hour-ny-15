@@ -32,15 +32,15 @@ function kthToLastNode(k, head) {
 
   // iterate through node until reaching kth to last
   while(currentNode) {
-    console.log(currentNode);
+    //console.log(currentNode);
     currentNode = currentNode.next;
    length += 1;
-    console.log('length',length)
+    //console.log('length',length)
     //console.log('k', k)
   }  
     let newTargetLocation = length - k - 1;
 
-    console.log(newTargetLocation)
+    //console.log(newTargetLocation)
     //loop through the linked list a second timee
     currentNode = head;
     let newCount = 0;
@@ -63,7 +63,7 @@ a.next = b;
 b.next = c;
 c.next = d;
 d.next = e;
-console.log(kthToLastNode(2, a));
+//console.log(kthToLastNode(2, a));
 //console.log(kthToLastNode())
 
 
