@@ -44,6 +44,4 @@ function modemean(array) {
     return false;
 }
 
-
-
 module.exports = modemean;
