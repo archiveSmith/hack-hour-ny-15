@@ -34,25 +34,48 @@ function Node(val) {
 
 
 function kthToLastNode(k, head) {
-  if (!head || length < 0 || k > length - 1) return null;
+  // if (!head || length < 0 || k > length - 1) return null;
 
-  let currentIndex = 0;
-  const index = length - k;
-  let currentNode = head;
+  // let currentIndex = 0;
+  // // const index = length - k;
+  // let currentNode = head.next;
 
-  while (currentNode) {
-    if (currentIndex === index) {
-      return currentNode;
-    }
-    currentIndex++;
-    currentNode = currentNode.next;
+  // while (currentNode.next) {
+  //   if (currentIndex === 0) {
+  //     return currentNode;
+  //   }
+  //   currentIndex++;
+  //   currentNode = currentNode.next;
+  // }
+
+  // return -1;
+
+  const nodeArr = [];
+  let node = head;
+
+  while (node.next) {
+    nodeArr.push(node);
+    node = node.next;
   }
 
-  return -1;
+  return nodeArr[nodeArr.length - k + 1].value;
 }
 
-const myNode = new Node('A');
-myNode.add()
-console.log(myNode);
+const a = new Node('A');
+const b = new Node('B');
+const c = new Node('C');
+const d = new Node('D');
+const e = new Node('E');
+
+
+a.next = b;
+b.next = c;
+c.next = d;
+d.next = e
+
+// const myNode = new Node('A');
+// a.add(b)
+// console.log(a);
+console.log(kthToLastNode(2, a));
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
