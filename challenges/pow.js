@@ -15,6 +15,6 @@ function pow(base, power) {
 // }
 //return product;
 
-console.log(pow(2, 3))
+// console.log(pow(2, 3))
 
 module.exports = pow;
