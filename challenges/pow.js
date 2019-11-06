@@ -3,7 +3,12 @@
  */
 
 function pow(base, power) {
-
+    function exponential(x = base){
+        if (power === 1) return x;
+        power -= 1;
+        const squared = x*base;
+        return exponential(squared)
+    }
+return exponential()
 }
-
 module.exports = pow;
