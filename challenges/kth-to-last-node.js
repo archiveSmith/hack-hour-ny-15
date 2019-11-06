@@ -22,14 +22,14 @@ function Node(val) {
 }
 
 function kthToLastNode(k, head) {
-  if (k < 1) return 'enter node greater than zero'
+  if (k < 1) return undefined
   let curr = head;
   let counter = 0;
   while (curr) {
     counter += 1;
     curr = curr.next
   }
-  if (counter < k) return 'node does not exist'
+  if (counter < k) return undefined
   let targetLinkNumber = counter - k;
   curr = head;
   while (targetLinkNumber > 0) {
