@@ -17,7 +17,26 @@
 //                     16 ]
 
 function fizzbuzz(num) {
+    if(num === undefined) return `No argument is given!`
+    if (num === 0) return `num must be greater than 0!`
 
+    let output = []
+    let i = 1;
+    while(i <= num){
+        if (i % 15 === 0){
+            output.push("fizzbuzz")
+        } else if (i % 3 === 0) {
+            output.push("fizz")
+        } else if (i % 5 === 0) {
+            output.push("buzz")
+        } else {
+            output.push(i)
+        }
+        i++
+    }
+    return output;
 }
+
+console.log(fizzbuzz(10))
 
 module.exports = fizzbuzz;
