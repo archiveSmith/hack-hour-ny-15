@@ -4,6 +4,10 @@
 
 function pow(base, power) {
     function exponential(x = base){
+        if (power > 0) {
+            return 'I dont know how to handle this quite yet and I ran out of time'
+        }
+        if (power === 0) return 1;
         if (power === 1) return x;
         power -= 1;
         const squared = x*base;
@@ -11,4 +15,5 @@ function pow(base, power) {
     }
 return exponential()
 }
+
 module.exports = pow;
