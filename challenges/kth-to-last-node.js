@@ -73,6 +73,6 @@ d.next = e;
 // const myNode = new Node('A');
 // a.add(b)
 // console.log(a);
-console.log(kthToLastNode(2, a));
+// console.log(kthToLastNode(2, a));
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
