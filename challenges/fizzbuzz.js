@@ -17,7 +17,21 @@
 //                     16 ]
 
 function fizzbuzz(num) {
-
+  const resultArr = []
+  let i = 1
+  while (i <= num) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      resultArr.push('fizzbuzz')
+    } else if (i % 3 === 0) {
+      resultArr.push('fizz')
+    } else if (i % 5 === 0) {
+      resultArr.push('buzz')
+    } else {
+      resultArr.push(i)
+    }
+    i += 1;
+  }
+  return resultArr
 }
 
 module.exports = fizzbuzz;
