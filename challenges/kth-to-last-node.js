@@ -32,25 +32,29 @@ c.next = d;
 d.next = e;
 
 console.log(a.next);
+
 function kthToLastNode(k, head) {
   let tail;
+  let index = 0;
+  let nodeObjectindex = {};
   while (head !== null) {
+    nodeObjectindex[index] = head
     head = head.next
-    // tail = head.next
-
-    if (head.next) {
-      tail = head.next
-    }
-    console.log("tail", tail)
-
-    //get to last node and then find a way to count backwards to get to the value that i want
-  
+        index += 1    // tail = head.next  
   }
-  return tail
-  //first find last node 
+
+  const nodeIndexToLookFor = (index - k)
+  console.log(nodeIndexToLookFor)
+  console.log(nodeObjectindex[nodeIndexToLookFor]["value"])
+  return nodeObjectindex[nodeIndexToLookFor]["value"]
+  
+
 }
 
 kthToLastNode(1, a);
+// * kthToLastNode(2, a); -> returns 'D' (the value on the second to last node)
+
+
 
 
 
