@@ -36,29 +36,26 @@ function Node(val) {
 function kthToLastNode(k, head) {
   // if (!head || length < 0 || k > length - 1) return null;
 
-  // let currentIndex = 0;
+  let currentIndex = 0;
   // // const index = length - k;
-  // let currentNode = head.next;
+  let currentNode = head;
 
-  // while (currentNode.next) {
-  //   if (currentIndex === 0) {
-  //     return currentNode;
-  //   }
-  //   currentIndex++;
-  //   currentNode = currentNode.next;
-  // }
+  while (currentNode) {
+    currentIndex++;
+    currentNode = currentNode.next;
+  }
 
   // return -1;
 
   const nodeArr = [];
   let node = head;
 
-  while (node.next) {
+  while (node) {
     nodeArr.push(node);
     node = node.next;
   }
-
-  return nodeArr[nodeArr.length - k + 1].value;
+  // console.log(nodeArr)
+  return nodeArr[nodeArr.length - k].value;
 }
 
 const a = new Node('A');
@@ -71,7 +68,7 @@ const e = new Node('E');
 a.next = b;
 b.next = c;
 c.next = d;
-d.next = e
+d.next = e;
 
 // const myNode = new Node('A');
 // a.add(b)
