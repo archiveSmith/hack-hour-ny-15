@@ -1,4 +1,4 @@
-/**
+/*
  * Write a function that takes two parameters, an integer and the head of a
  * singly linked list, and returns the VALUE on the kth to last node in the list.
  *
@@ -27,6 +27,10 @@ function kthToLastNode(k, head) {
   while (currNode.next !== null) {
     total += 1;
     currNode = currNode.next;
+  }
+
+  if (k < 1 || k > total) {
+    return undefined;
   }
 
   currNode = head;

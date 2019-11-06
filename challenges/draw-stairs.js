@@ -28,7 +28,7 @@ function drawStairs(n) {
         currStair += "\n"
         stairs += currStair;
     }
-    return stairs;
+    console.log(stairs);
 }
 
 
