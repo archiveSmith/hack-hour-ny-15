@@ -48,7 +48,7 @@ b.next = c;
 c.next = d;
 d.next = e;
 
-console.log(kthToLastNode(1, a))
+console.log(kthToLastNode(4, a))
 
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
