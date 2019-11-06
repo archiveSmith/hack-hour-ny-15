@@ -2,7 +2,11 @@
  * Use recursion!
  */
 
-function pow(base, power) {
+function pow(base, power, total = base) {
+    if (power === 1){
+        return total;
+    }
+    return pow(base, power-1, total * base);
 
 }
 
