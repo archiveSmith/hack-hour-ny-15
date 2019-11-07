@@ -7,13 +7,27 @@
  */
 
 /**
-  * example:
-  * var result = anagrams('abc');
-  * console.log(result); // [ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ]
-  */
+ * example:
+ * var result = anagrams('abc');
+ * console.log(result); // [ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ]
+ */
 
 function anagrams(string) {
+    if (string.length === 1) {
+        return string;
+    }
+    let combinations = [];
+    for (let i = 0; i < string.length; i++) {
 
+        let result = anagrams(string.slice(0, i) + string.slice(i + 1));
+        for (let j = 0; j < result.length; j++) {
+            let value = string[i] + result[j];
+            combinations.push(value);
+        }
+    }
+    return combinations;
 }
+
+console.log(anagrams("abc"))
 
 module.exports = anagrams;
