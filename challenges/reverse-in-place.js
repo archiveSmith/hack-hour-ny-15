@@ -14,7 +14,15 @@
  */
 
 function reverseInPlace(array) {
-
+    for (let i = 0; i < array.length / 2; i++) {
+        const beginning = array[i];
+        array[i] = array[array.length - 1 - i];
+        array[array.length - 1 - i] = beginning;
+    }
+    return array;
 }
+
+
+console.log('reverseInPlace([1,2,3,4,5,6,7]) :', reverseInPlace([1, 2, 3, 4, 5, 6, 7]))
 
 module.exports = reverseInPlace;
