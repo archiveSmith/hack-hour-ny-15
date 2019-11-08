@@ -5,8 +5,8 @@
  // we multiply base by base power number of times/
  // 2^3 is really 2 * 2 = 4 * 2 = 8
 
-const pow = (base, power) => (power == 0 ? 1 : base * pow(base, --power));
-
+const pow = (base, power) => 
+  (power === 0 ? 1 : base * pow(base, --power));
 
 // const pow = (base, power) => (power = 1) ? base : base * pow(base, --power);
 
