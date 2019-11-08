@@ -13,8 +13,24 @@
  * DO NOT USE THE BUILT IN REVERSE METHOD
  */
 
-function reverseInPlace(array) {
 
+
+function reverseInPlace(array) {
+    if(!array) return undefined;
+    if(array === [] || array.length === 1) return array;
+    let initialArrayLength = array.length-1
+    let x = array.length-2;
+    while(x >=0){
+        array.push(array[x])
+        x--
+    }
+    array.splice(0, initialArrayLength)
+    return array
 }
+
+
+const myArray = [3, 4, 5, 6, 7, 8, 9, 10, 23]
+
+console.log(reverseInPlace(myArray))
 
 module.exports = reverseInPlace;
