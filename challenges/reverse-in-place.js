@@ -15,6 +15,25 @@
 
 function reverseInPlace(array) {
 
+    let length = array.length;
+    let first = array[0]
+    let last = array[array.length-1]
+    let incremenetor = 1
+
+    let container= ""
+
+    for (let i = array.length-1; i >= 0; i--) {
+        container+= array[i]
+    }
+
+    for(let i = 0; i < array.length; i++) {
+        console.log(container[i])
+        array[i] = container[i]
+    }
+
+return array
+    console.log(array)
 }
 
+reverseInPlace(["a", "p", "p", "l", "e"])
 module.exports = reverseInPlace;
