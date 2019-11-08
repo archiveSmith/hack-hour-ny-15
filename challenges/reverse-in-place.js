@@ -29,8 +29,8 @@ function reverseInPlace(array) {
 }
 
 
-const myArray = [3, 4, 5, 6, 7, 8, 9, 10, 23]
+// const myArray = [3, 4, 5, 6, 7, 8, 9, 10, 23]
 
-console.log(reverseInPlace(myArray))
+// console.log(reverseInPlace(myArray))
 
 module.exports = reverseInPlace;
