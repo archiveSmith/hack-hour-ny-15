@@ -13,6 +13,8 @@
  * DO NOT USE THE BUILT IN REVERSE METHOD
  */
 
+ //double the size of the array and iterate thru it 
+//assign the first element to the last element's position on each decrementing iteration while moving moving or shifting each element over 
 
 function reverseInPlace(array) {
     array.length = array.length * 2;
