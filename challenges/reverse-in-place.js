@@ -14,7 +14,16 @@
  */
 
 function reverseInPlace(array) {
-
+    //loop through from back of array, starting from length-2(keep the very last character in place)
+    //move i to the end of the array, then remove array[i]
+    for (let i = array.length-2; i >= 0; i--){
+        array.push(array[i])
+        array.splice(i, 1)
+    }
+    return array;
 }
 
 module.exports = reverseInPlace;
+
+// let testArr = ['a','b','c','d','e'];
+// console.log(reverseInPlace(testArr));
