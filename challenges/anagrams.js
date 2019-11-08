@@ -14,9 +14,9 @@
 
 function anagrams(string) {
     //I need to keep tracking of how any of each letter I can use, maybe iterate through to creat an object
-    //I need to keep track of which letter I am on, so probably pass that to my next recursive call
-    //Use a loop to iterate through the string and when I use a letter, replace it with a '' and pass that to my next call probably don't use replace method to avoid shifting and just replace the index
-    //concat the results of the sub calls and push those outputs to an array when I trigger my base case of no more length
+    //I need to keep track of which letter I am on, so probably create my recursive calls inside my loop
+    //Use a loop to iterate through the string and when I use a letter,I need to remove it from the possible options and pass that as my new string
+    //concat the results of the sub calls and push those outputs to an array when I trigger my base case
     const outputArray = [];
 
     function helperAnagram(remainingString, currentOutput = '') {
@@ -35,5 +35,6 @@ function anagrams(string) {
     }
     return helperAnagram(string)
 }
-console.log(anagrams('abc'))
+// console.log(anagrams('abc'))
+
 module.exports = anagrams;
