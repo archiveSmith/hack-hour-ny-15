@@ -14,7 +14,23 @@
  */
 
 function reverseInPlace(array) {
+    //assign items to a non existent index
+    //use that as storage
+    let reverseCounter = 1;
+    let originalLength = array.length
+    for(let i = 0; i < originalLength; i++){
+        array[originalLength+i] = array[i];
+    }
+    for(let j = originalLength-1; j >= 0;j-- ){
+        array[j] = array[j+reverseCounter];
+        reverseCounter+=2
+        console.log(array);
+    }
+    array.length = originalLength;
+    return array;
 
 }
+console.log('hello');
+console.log(reverseInPlace([1,2,3,4,5,6,7]))
 
 module.exports = reverseInPlace;
