@@ -13,25 +13,28 @@
   */
 
 function anagrams(string) {
-  if (string.length === 0) return [];
-  const results = [];
+  if(string === '') return string;
 
-  for (let i = 0; i < string.length; i += 1) {
-    let str = string[i];
-    for (let j = 0; j < string.length; j += 1) {
-      if(i !== j) str = str + string[j];
+  const strArr = string.split('');
+  const result = [];
+  let joined = '';
+
+  while (joined != string) {
+    for (let i = strArr.length - 2; i >= 0; i -= 1) {
+      let temp = strArr[strArr.length - 1];
+      strArr[strArr.length - 1] = strArr[i];
+      strArr[i] = temp;
+
+
+      joined = strArr.join('');
+      result.push(joined)
     }
-    results.push(str);
-    str = string[i];
-    for (let j = string.length - 1; j >= 0; j -= 1) {
-      if(i !== j) str = str + string[j];
-    }
-    results.push(str);
   }
-  return results;
+
+  return result;
 }
 
-// var result = anagrams('abcd');
-// console.log(result);
+var result = anagrams('abc');
+console.log(result);
 
 module.exports = anagrams;
