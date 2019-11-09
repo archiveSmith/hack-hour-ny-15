@@ -13,13 +13,12 @@
   */
 
 function anagrams(string) {
-
-  //declare a variable to hold the output strings
-  //for each loop of the string, 
-  //for each letter in the string, concatenate and make a new combination on each iteration
-  //do the same process in reverse
+  // declare a variable to hold the output strings
+  // for each loop of the string,
+  // for each letter in the string, concatenate and make a new combination on each iteration
+  // do the same process in reverse
   //
-  let result = [];
+  const result = [];
   let anaWord = '';
   let innerCounter = string.length * 2;
   while (innerCounter > 0) {
@@ -34,14 +33,13 @@ function anagrams(string) {
   }
 
   return result;
-
 }
 
 
-function anagram (string) {
-  let resultStr = [];
+function anagram(string) {
+  const resultStr = [];
 
-  //loop through the string and pass each result a
+  // loop through the string and pass each result a
 }
 
 console.log(anagrams('abc'));
