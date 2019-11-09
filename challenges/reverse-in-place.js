@@ -21,6 +21,5 @@ function reverseInPlace(array) {
     return array.slice(cap)
 }
 
-console.log(reverseInPlace(['1','2','3','4','5','6','7']))
 
 module.exports = reverseInPlace;
