@@ -20,7 +20,6 @@ function stringRotation(s1, s2) {
   if (!s1 || !s2) return false;
   for (char in s1) {
     s1 += s1[char];
-    console.log(s1);
   }
   return isSubstring(s1, s2);
 }
