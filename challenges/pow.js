@@ -12,4 +12,4 @@ function pow(base, power, result=1) {
 module.exports = pow;
 
 
-console.log(pow(2,4 ))
+console.log(pow(2,4)) // 16 
