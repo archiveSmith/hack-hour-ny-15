@@ -31,6 +31,6 @@ function reverseInPlace(array) {
 
 }
 console.log('hello');
-console.log(reverseInPlace([1,2,3,4,5,6,7]))
+console.log(reverseInPlace([1,2,3,4))
 
 module.exports = reverseInPlace;

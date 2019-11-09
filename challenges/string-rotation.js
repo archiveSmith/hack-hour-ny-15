@@ -16,7 +16,23 @@ function isSubstring(s1, s2) {
 }
 
 function stringRotation(s1, s2) {
+  //double the substring and see if the first string occurs in the second
+  if (typeof s1 !== 'string' || typeof s2 !== 'string') return 'Please input strings only.';
 
+  s2 += s2;
+  if ((s1.length*2) !== s2.length) return false;
+  console.log(s2);
+  console.log(s2.includes(s1))
+  const isRotatedString = s2.includes(s1);
+  console.log(isRotatedString)
+  return isRotatedString;
 }
+
+
+// console.log(stringRotation("hello", "hello"))
+
+console.log(stringRotation("hello", "llohe"))
+console.log(stringRotation("hello", "he"))
+
 
 module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};
