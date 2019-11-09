@@ -31,9 +31,10 @@ function reverseInPlace(array) {
         array[i] = container[i]
     }
 
-return array
+    return array
     console.log(array)
 }
 
 reverseInPlace(["a", "p", "p", "l", "e"])
+// reverseInPlace([1, 2, 3, 4])
 module.exports = reverseInPlace;
