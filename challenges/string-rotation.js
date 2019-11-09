@@ -16,7 +16,42 @@ function isSubstring(s1, s2) {
 }
 
 function stringRotation(s1, s2) {
+  // FIRST APPROACH - ONLY WORKS IF THERES ONE INDEXOF THE FIRST LETTER
+  // // CHECK FOR EDGE CASE - LENGTH OF S2 DOES NOT EQUAL LENGTH OF S1
+  // if (s1.length !== s2.length) return false;
+  // // INITIALIZE NEW LABEL TO HOLD VALUE OF S2 AS TO NOT CHANGE INPUT
+  // s2Reorder = s2;
+  // // CHANGE ORDER OF S2REORDER BASED ON THE FIRST LETTER OF S1
+  // // TRYING TO CHANGE THE ROTATION BACK TO THE ORIGINAL
+  // s2Reorder = s2.slice(s2.indexOf(s1[0])) + s2.slice(0,s2.indexOf(s1[0]));
+  // // USE ISSUBSTRING TO CHECK IF THEY MATCH
+  // return isSubstring(s1, s2Reorder);
 
+  // SECOND APPROACH
+  // CHECK FOR EDGE CASE - LENGTH OF S2 DOES NOT EQUAL LENGTH OF S1
+  if (s1.length !== s2.length) return false;
+  // USE TOLOWERCASE() TO MAKE SURE ALL INPUT IS SAME CASE
+  let s1Lower = s1.toLowerCase();
+  // INITIALIZE NEW LABEL TO HOLD VALUE OF S2 AS TO NOT CHANGE INPUT
+  let s2Reorder = s2.toLowerCase();
+  // INTIALIZE COUNT TO ITERATE THROUGH S2REORDER USING WHILE LOOP
+  let count = 0;
+  while (count < s2Reorder.length) {
+    // CHECK FOR EQUALITY
+    if (s1Lower === s2Reorder) return true;
+    // REORDER S2REORDER TO CHANGE INPUT FOR EQUALITY CONDITION FOR NEXT LOOP
+    s2Reorder = s2Reorder.slice(-1) + s2Reorder.slice(0,-1);
+    // INCREMENT COUNT AS TO TAKE NEXT STEP
+    ++count;
+  }
+
+  return false;
 }
+
+// console.log(stringRotation("hello world", "hello WORLD")) //-> true
+// console.log(stringRotation("hello", "llohe")) //-> true
+// console.log(stringRotation("hello", "he")) //-> false
+// console.log(stringRotation("hello", "ollhe")) //-> false
+// console.log(stringRotation("aardvark", "dvarkaar"))
 
 module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};
