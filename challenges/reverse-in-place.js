@@ -14,6 +14,7 @@
  */
 
 function swap(array, a, b) {
+  // eslint-disable-next-line no-param-reassign
   [array[a], array[b]] = [array[b], array[a]];
 }
 
