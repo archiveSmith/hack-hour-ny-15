@@ -19,37 +19,54 @@
 function Node(val) {
   this.value = val;
   this.next = null;
-
 }
 
+// function kthToLastNode(k, head) {
+//   //function returns a value on the kth to the last node;
+//   //how do you find the last node;
+//   //start iterating from there to find the kth to the last node from there
+//   let currentNode = head;
+//   const target = k;
+//   let length = 0;
+
+//   // iterate through node until reaching kth to last
+//   while(currentNode) {
+//     //console.log(currentNode);
+//     currentNode = currentNode.next;
+//    length += 1;
+//     //console.log('length',length)
+//     //console.log('k', k)
+//   }
+//     let newTargetLocation = length - k - 1;
+
+//     //console.log(newTargetLocation)
+//     //loop through the linked list a second timee
+//     currentNode = head;
+//     let newCount = 0;
+//     while (currentNode) {
+//       newCount += 1;
+//       currentNode = currentNode.next;
+//       if (newCount === newTargetLocation) return currentNode.value;
+
+//     }
+// }
+
 function kthToLastNode(k, head) {
-  //function returns a value on the kth to the last node;
-  //how do you find the last node;
-  //start iterating from there to find the kth to the last node from there
-  let currentNode = head;
-  const target = k;
-  let length = 0;
+  // declare an empty array that holds the value of each node
+  const resultantArray = [];
+  console.log(resultantArray);
 
-  // iterate through node until reaching kth to last
-  while(currentNode) {
-    //console.log(currentNode);
-    currentNode = currentNode.next;
-   length += 1;
-    //console.log('length',length)
-    //console.log('k', k)
-  }  
-    let newTargetLocation = length - k - 1;
+  let current = head;
 
-    //console.log(newTargetLocation)
-    //loop through the linked list a second timee
-    currentNode = head;
-    let newCount = 0;
-    while (currentNode) {
-      newCount += 1;
-      currentNode = currentNode.next;
-      if (newCount === newTargetLocation) return currentNode.value;
-      
-    }
+  while (current) {
+    resultantArray.push(current.value);
+    // console.log(current.value)
+    current = current.next;
+  }
+
+  return resultantArray[resultantArray.length - k];
+
+  // console.log(resultantArray)
 }
 
 
@@ -58,26 +75,26 @@ const b = new Node('B');
 const c = new Node('C');
 const d = new Node('D');
 const e = new Node('E');
-//console.log(a.contains(''))
+// console.log(a.contains(''))
 a.next = b;
 b.next = c;
 c.next = d;
 d.next = e;
-//console.log(kthToLastNode(2, a));
-//console.log(kthToLastNode())
+console.log(kthToLastNode(2, a));
+// console.log(kthToLastNode())
 
 
-  //)
-  // while (current.value !== k) {
-  //   if (current.next === null) {
-  //     console.log(current.value)
-  //     return false;
-  //   } else {
-  //     current = current.next;
-  //   }
-  // }
-  // //if (current.value === value) return true;
-  // return true;
+// )
+// while (current.value !== k) {
+//   if (current.next === null) {
+//     console.log(current.value)
+//     return false;
+//   } else {
+//     current = current.next;
+//   }
+// }
+// //if (current.value === value) return true;
+// return true;
 //   let length = 1;
 //   while (current) {
 //     current = current.next;
@@ -95,13 +112,12 @@ d.next = e;
 //   }
 //   return current.value;
 // }
-  // while (current.value) {
-  //   let current = head;
-  //   if (current.next === undefined) {
-  //     console.log(current.value)
-  //   }
-  // }
-
+// while (current.value) {
+//   let current = head;
+//   if (current.next === undefined) {
+//     console.log(current.value)
+//   }
+// }
 
 
 // Node.prototype.contains = function (value) {
@@ -121,9 +137,7 @@ d.next = e;
 //     }
 //   }
 //   return 'Not found!';
-//}
+// }
 
 
-
-
-module.exports = {Node: Node, kthToLastNode: kthToLastNode};
+module.exports = { Node, kthToLastNode };

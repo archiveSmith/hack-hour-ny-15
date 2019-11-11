@@ -17,23 +17,22 @@
 //                     16 ]
 
 function fizzbuzz(num) {
-      //create a new empty array to hold the results of the 
-      let newArr = [];
+  // create a new empty array to hold the results of the
+  const newArr = [];
 
-      //loop through the passed in number
-      for (let i = 1; i <= num; i++) {
-
-   if (i % 3 === 0 && i % 5 === 0) {
-       newArr.push('fizzbuzz');
-   } else if (i % 5 === 0) {
-       newArr.push('buzz')
-   } else if (i % 3 === 0) {
-       newArr.push('fizz')
-   } else {
-       newArr.push(i)
-   }
-   }
-   return newArr;
+  // loop through the passed in number
+  for (let i = 1; i <= num; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      newArr.push('fizzbuzz');
+    } else if (i % 5 === 0) {
+      newArr.push('buzz');
+    } else if (i % 3 === 0) {
+      newArr.push('fizz');
+    } else {
+      newArr.push(i);
+    }
+  }
+  return newArr;
 }
 
 module.exports = fizzbuzz;
