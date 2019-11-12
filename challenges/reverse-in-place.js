@@ -15,12 +15,15 @@
 
 function reverseInPlace(array) {
   let arrLen = array.length;
-  for (let i = arrLen-1; i >= 0; i--) {
+  for (let i = arrLen - 1; i >= 0; i--) {
     array.push(array[i]);
   }
   return array.slice(arrLen);
 }
 
+const reverse2 = a => a.map((el, i) => a[a.length - i - 1]);
+
 console.log(reverseInPlace([1, 2, 3, 4, 5, 6, 7]));
+console.log(reverse2([1, 2, 3, 4, 5, 6, 7]));
 
 module.exports = reverseInPlace;

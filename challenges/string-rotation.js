@@ -12,11 +12,23 @@
  */
 
 function isSubstring(s1, s2) {
-  return s1.indexOf(s2) >= 0;
+  s1 = s1.split("");
+  for (let i = 0; i < s1.length; i++) {
+    s1.push(s1.shift());
+    if (s1.join("") === s2) return true;
+  }
+  return false;
+  // return s1.indexOf(s2) >= 0;
 }
 
 function stringRotation(s1, s2) {
-
+  if (s1.length !== s2.length) return false;
+  return isSubstring(s1, s2);
 }
 
-module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};
+console.log(stringRotation("hello", "llohe")); // true
+console.log(stringRotation("hello", "hello")); // true
+console.log(stringRotation("abcd", "dabc")); // true
+console.log(stringRotation("hello", "he")); // false
+
+module.exports = { isSubstring: isSubstring, stringRotation: stringRotation };
