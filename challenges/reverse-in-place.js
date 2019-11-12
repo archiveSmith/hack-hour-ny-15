@@ -15,17 +15,31 @@
 
 function reverseInPlace(array) {
 
-    for (let i = 0; i < array.length / 2; i += 1) {
-        let temp = array[i];
-        array[i] = array[array.length - 1 - i];
-        array[array.length - 1 - i] = temp;
-    }
+  for (let i = 0; i < array.length / 2; i += 1) {
+    let temp = array[i];
+    array[i] = array[array.length - 1 - i];
+    array[array.length - 1 - i] = temp;
+  }
 
-    return array
+  return array;
 }
+
+// Second Approach:
+// create a swap() helper function
+// const swap = (array, a, b) {
+
+// }
+
+// const reverseInPlace = array => {
+//     let a = 0;
+//     let b = array.length - 1;
+//     return swap(array, a, b);
+// }
 
 const stringArray = ['a', 'b', 'c', 'd', 'e', 'f'] //-> ['f', 'e', 'd', 'c', 'b', 'a']
 console.log(reverseInPlace(stringArray))
+console.log(reverseInPlace([1, 2, 3, 4, 5]))
+console.log(reverseInPlace([{a: 'true'}, [false, true, null], {c: 'name', age: 54}]))
 
 
 module.exports = reverseInPlace;

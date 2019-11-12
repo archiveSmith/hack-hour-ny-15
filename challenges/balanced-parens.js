@@ -24,8 +24,35 @@
  *
  */
 
-function balancedParens(input){
+function balancedParens(input) {
+  const forwardBrackets = '([{';
+  const backwardBrackets = ')]}';
+  let forwardCount = 0;
+  let backwardCount = 0;
 
+  for (let i = 0; i < input.length; i += 1) {
+    const char = input[i];
+    if (forwardBrackets.includes(char)) { // I need a way to check that these
+      forwardCount += 1;                  // are appropriately placed.  
+    } else if (backwardBrackets.includes(char)) {
+      backwardCount += 1;
+    }
+  }
+
+  return (forwardCount + backwardCount) % 2 === 0;
 }
+
+// console.log(balancedParens('(')); // false
+// console.log(balancedParens('()')); // true
+// console.log(balancedParens(')(')); // false
+// console.log(balancedParens('(())')); // true
+
+// console.log(balancedParens('[](){}')); // true
+// console.log(balancedParens('[({})]')); // true
+// console.log(balancedParens('[(]{)}')); // false
+
+// console.log(balancedParens(' var wow  = { yo: thisIsAwesome() }')); // true
+// console.log(balancedParens(' var hubble = function() { telescopes.awesome();')); // false
+
 
 module.exports = balancedParens;
