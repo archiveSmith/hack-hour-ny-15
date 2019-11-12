@@ -24,8 +24,50 @@
  *
  */
 
-function balancedParens(input){
-
+function cleanedInput(strIn) {
+  //   console.log(strIn);
+  strIn = strIn.split("");
+  //   console.log(strIn.length);
+  let strOut = "";
+  let leftStrs = "[{(";
+  let rightStrs = "]})";
+  for (let i = 0; i < strIn.length; i++) {
+    if (leftStrs.indexOf(strIn[i]) !== -1) {
+      //   console.log("Left", strIn[i]);
+      strOut += "(";
+    } else if (rightStrs.indexOf(strIn[i]) !== -1) {
+      //   console.log("Right", strIn[i]);
+      strOut += ")";
+    }
+  }
+  return strOut;
 }
+
+function balancedParens(input) {
+  //   input = cleanedInput(input);
+  console.log(input);
+  if (input.trim()[0] !== "(") return false;
+  let isBalanced = true;
+  for (let i = 0; i < input.length; i++) {
+    if (
+      (input[i] === "(" && input[input.length - i - 1] === ")") ||
+      (input[i] === ")" && input[input.length - i - 1] === "(")
+    ) {
+      isBalanced = true;
+    } else {
+      isBalanced = false;
+    }
+  }
+  return isBalanced;
+}
+
+// console.log(balancedParens("(")); // false
+// console.log(balancedParens("()")); // true
+// console.log(balancedParens(")(")); // false
+// console.log(balancedParens("(())")); // true
+
+// console.log(balancedParens("[](){}")); // true
+// console.log(balancedParens("[({})]")); // true
+// console.log(balancedParens("[(]{)}")); // false
 
 module.exports = balancedParens;
