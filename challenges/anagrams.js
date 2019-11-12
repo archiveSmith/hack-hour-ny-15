@@ -7,13 +7,19 @@
  */
 
 /**
-  * example:
-  * var result = anagrams('abc');
-  * console.log(result); // [ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ]
-  */
+ * example:
+ * var result = anagrams('abc');
+ * console.log(result); // [ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ]
+ */
 
-function anagrams(string) {
+function anagrams(string, anagrams = [], counter = 0) {
+  if (counter === string.length) return anagrams;
 
+  let letter = string[counter];
+
+  for (let i = 0; i < string.length; i += 1) {}
+
+  return anagramsArr;
 }
 
 module.exports = anagrams;
