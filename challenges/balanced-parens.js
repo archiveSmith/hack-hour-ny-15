@@ -25,10 +25,12 @@
  */
 
 function balancedParens(input) {
+  if (input.length <= 1) return false;
   const openingBrackets = ['(', '{', '['];
   const matchingBrackets = {
     '(': ')',
     '{': '}',
+
     '[': ']',
   };
   const arr = [];
@@ -44,8 +46,12 @@ function balancedParens(input) {
   return false;
 }
 
-console.log(balancedParens('[](){}'));
-console.log(balancedParens('[({})]'));
-console.log(balancedParens('[(]{)}'));
+// console.log(balancedParens('[](){}'));
+// console.log(balancedParens('[({})]'));
+// console.log(balancedParens('[(]{)}'));
+// console.log(balancedParens('('));
+// console.log(balancedParens('()')); // true
+// console.log(balancedParens(')('));  // false
+// console.log(balancedParens('(())'));  // true
 
 module.exports = balancedParens;
