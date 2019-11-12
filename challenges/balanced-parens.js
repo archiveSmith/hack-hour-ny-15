@@ -24,8 +24,30 @@
  *
  */
 
-function balancedParens(input){
+function balancedParens(input) {
+  const forwardParens = '([{';
+  const backwardParens = ')]}';
+  let forwardCount = 0;
+  let backwardCount = 0;
 
+  for (let i = 0; i < input.length; i += 1) {
+    const char = input[i];
+    if (forwardParens.includes(char)) {
+      forwardCount += 1;
+    } else if (backwardParens.includes(char)) {
+      backwardCount += 1;
+    }
+  }
+  return (forwardCount + backwardCount) % 2 === 0;
 }
+
+// console.log(balancedParens('[](){}')); // true
+// console.log(balancedParens('[({})]'));   // true
+// console.log(balancedParens('[(]{)}')); // false
+//   Step 3:
+// ignore non - bracket characters
+// console.log(balancedParens(' var wow  = { yo: thisIsAwesome() }')); // true
+// console.log(balancedParens(' var hubble = function() { telescopes.awesome();')); // false
+
 
 module.exports = balancedParens;
