@@ -13,8 +13,35 @@
  * DO NOT USE THE BUILT IN REVERSE METHOD
  */
 
-function reverseInPlace(array) {
+// function reverseInPlace(array) {
 
+//   for ( let i = 0; i < array.length / 2; i += 1) {
+//     let temp = array[i];
+//     array[i] = array[array.length - 1 - i];
+//     array[array.length - 1 - i];
+//   }
+
+//   return array;
+// }
+
+
+// Fellow Solution:
+function swap(arr, a, b) {
+  [arr[a], arr[b]] = [arr[b], arr[a]];
 }
 
+function reverseInPlace(array) {
+  let leftToRight = 0;
+  let rightToLeft = array.length - 1;
+  while (leftToRight < rightToLeft) {
+    swap(array, leftToRight, rightToLeft);
+    leftToRight += 1;
+    rightToLeft -= 1;
+  }
+  
+  return array;
+}
+
+// console.log(reverseInPlace([1, 2, 3, 4, 5, 6, 7]));
+// console.log(reverseInPlace(['a', 'b', 'c', 'd', 'e', 'f']));
 module.exports = reverseInPlace;
