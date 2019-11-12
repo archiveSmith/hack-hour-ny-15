@@ -62,9 +62,6 @@ function stringRotation(s1, s2) {
         startingIndex= obj2[startingChar][i];
         let index = 0;
         const newString = s2.slice(startingIndex) + s2.slice(0,startingIndex)
-  
-    
-
         while(index < newString.length){
           if(s1[index] !== newString[index] && i<obj[startingChar].length){
             stillChecking=true;  
