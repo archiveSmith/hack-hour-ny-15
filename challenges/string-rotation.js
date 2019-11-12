@@ -11,12 +11,30 @@
  *              stringRotation("hello", "ollhe") -> false (not a rotation, just an anagram)
  */
 
-function isSubstring(s1, s2) {
-  return s1.indexOf(s2) >= 0;
-}
+
 
 function stringRotation(s1, s2) {
+//check for complete reverse? 
+//check if strings are exactly the same
+//then start checking to see if it is a substring beginning and ending at a particular index
+//create an object where the keys represent the indices of s1 and the value represents whether the character for s2 is in s1 or not 
+//when you keep getting false 
+
+   let s2Replica = JSON.parse(JSON.stringify(s2))
+   s2Replica = s2Replica.split("").reverse().join("")
+  
+  if (s1 === s2 || s1 ==  s2Replica) {
+    return true 
+  } else {
+    return false
+  }
+
+  const half = s1.isSubstring(0, 2)
+  console.log(s1.isSubstring(s2)
 
 }
+
+
+console.log(stringRotation("hello", "hello"))
 
 module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};
