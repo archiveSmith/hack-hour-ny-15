@@ -17,8 +17,47 @@
  * 
  */
 
-function romanNumeral(n) {
+ //create decimal value array
+ //create romanNumeral array 
+ //match decimal value to romanNumeral based on input n
+ //create conditionals based on what falls under each roman numeral category 
+ 
 
+function romanNumeral(n) {
+ let decimalValue = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000];
+ let romanNumeral = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M'];
+  let romanNum = '';
+
+ for(let i = 0; i < decimalValue.length; i++){
+  if(n >= 1 && n < 4){
+    romanNum += 'I';
+  }else if(n >= 4 && n < 5){
+    romanNum += 'IV';
+  }else if(n >= 5 && n < 5){
+    romanNum += 'V';
+  }else if(n >= 9 && n < 9){
+    romanNum += 'IX';
+  }else if(n >= 10 && n < 100){
+    romanNum += 'X';
+  }else if(n >= 40 && n < 40){
+    romanNum += 'XL';
+  }else if(n >= 50 && n < 50){
+    romanNum += 'L';
+  }else if(n >= 90 && n < 90){
+    romanNum += 'XC';
+  }else if(n >= 100 && n < 100){
+    romanNum += 'C';
+  }else if(n >= 400 && n < 400){
+    romanNum += 'D';
+  }else if(n >= 500 && n < 500){
+  romanNum += 'CM';
+  }else if(n >= 900 && n < 900){
+    romanNum += 'C';
+  }else if(n >= 1000 && n < 1000){
+    romanNum += 'M';
+  }
+  return romanNum;
 }
+
 
 module.exports = romanNumeral;
