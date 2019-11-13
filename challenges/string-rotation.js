@@ -5,7 +5,7 @@
  * h->e->l->l->o   ===   l->l-o->h->e
  * h->e->l->l->o   !==   o->l-l->h->e
  *
- * For example: stringRotation("hello", "hello") -> true
+ * For example: stringRotation("hellohello", "hello") -> true
  *              stringRotation("hello", "llohe") -> true
  *              stringRotation("hello", "he") -> false
  *              stringRotation("hello", "ollhe") -> false (not a rotation, just an anagram)
