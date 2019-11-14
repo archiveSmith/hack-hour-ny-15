@@ -64,6 +64,6 @@ function modemean(array) {
   return mean === mode;
 }
 // console.log(modemean([1,2,2,2,3,3,3,3,4,5,5,6]))
-console.log(modemean('hi'));
+console.log(modemean([2, 3, 4, 5, 6, 1]));
 
 module.exports = modemean;
