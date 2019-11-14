@@ -1,3 +1,6 @@
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable guard-for-in */
+/* eslint-disable no-param-reassign */
 /* Given a positive integer, return it as a string in Roman Numeral form.
  * Some basic conversions are given below:
  *
@@ -17,7 +20,6 @@
  *
  */
 
-
 function romanNumeral(num) {
   //  create an object to hold the roman numeral list;
 
@@ -25,56 +27,46 @@ function romanNumeral(num) {
 
   // eslint-disable-next-line no-unused-vars
   const romanNumeralList = {
-    1: 'I',
-    4: 'IV',
-    5: 'V',
-    9: 'IX',
-    10: 'X',
-    40: 'XL',
-    50: 'L',
-    90: 'XC',
-    100: 'C',
-    400: 'CD',
-    500: 'D',
-    900: 'CM',
-    1000: 'M',
+    M: 1000,
+    CM: 900,
+    D: 500,
+    CD: 400,
+    C: 100,
+    XC: 90,
+    L: 50,
+    XL: 40,
+    X: 10,
+    IX: 9,
+    V: 5,
+    IV: 4,
+    I: 1,
   };
 
-  let midNum;
-
-  //  if num is less than one or greater than 3999 return num
-
-  if (num < 1 || num > 3999) {
-    return num;
-  } 
-    
-    for (let key in romanNumeralList) {
-      console.log(num)
- 
-  
-      midNum = Math.floor(num / key);
-      console.log(midNum)
-  
-      console.log(midNum);
-
-      if (midNum >= 0) {
-        console.log(midNum)
-        for (let i = 0; i < midNum; i += 1) {
-          console.log(romanNumeralList[key])
-          result += romanNumeralList[key];
-        }
-      }
-
-      
-       num = num % key;
+  for (const key in romanNumeralList) {
+    console.log(num);
+    while (num >= romanNumeralList[key]) {
+      console.log(num);
+      console.log(romanNumeralList[key]);
+      // console.log()
+      result += key;
+      num -= romanNumeralList[key];
     }
-  
-  
+  }
   console.log(result);
-
   return result;
 }
 
-console.log(romanNumeral(4));
+console.log(romanNumeral(654));
 
-module.exports = romanNumeral;
+
+// //  function convertToRoman(num) {
+// //   let lookup = {M:1000,CM:900,D:500,CD:400,C:100,XC:90,L:50,XL:40,X:10,IX:9,V:5,IV:4,I:1};
+// //   let romanized = '';
+// //   for (let i in lookup) {  	      // Loop through the key/value pairs in the lookup object
+// //     while ( num >= lookup[i] ) {  // While the condition is met do following >>>
+// //       romanized += i;   			  // Add the current i key to the variable roman
+// //       num -= lookup[i];     	  // Decrease the num number by the current i value
+// //     }
+// //   }
+// //   return romanized;
+// // };
