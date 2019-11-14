@@ -33,15 +33,16 @@ function balancedParens(input) {
 
 function pullPairs(inputArr) {
   const pairsPulledArr = inputArr.slice();
-  let checkAgain = false;
-  for (let i = 0; i < inputArr.length - 1; i += 1) {
-    if (inputArr[i] === '(' && inputArr[i + 1] === ')' || inputArr[i] === '[' && inputArr[i + 1] === ']' || inputArr[i] === '{' && inputArr[i + 1] === '}') {
-      const fill = [' ', ' '];
-      pairsPulledArr.splice(i, 2, ' ');
-      checkAgain = true;
+  let checkAgain;
+  function innerPull(inputArr) {
+    if (checkAgain === false) return inputArr;
+    for (let i = 0; i < inputArr.length - 1; i += 1) {
+      if (inputArr[i] === '(' && inputArr[i + 1] === ')' || inputArr[i] === '[' && inputArr[i + 1] === ']' || inputArr[i] === '{' && inputArr[i + 1] === '}') {
+        pairsPulledArr.splice(i, 2, ' ');
+        checkAgain = true;
+      }
     }
   }
-  console.log(pairsPulledArr.replace(' ', ''));
   return pairsPulledArr;
 }
 
