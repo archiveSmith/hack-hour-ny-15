@@ -9,7 +9,24 @@
  */
 
 function subsetSum(array, target) {
-
+    const options = {};
+    for(let num of array){
+        console.log('array:', array)
+        console.log('target:', target)
+        console.log('num:', num)
+        if(options[num]) return true;
+        else{
+            options[target-num] = true;
+            console.log('num:', num)
+            console.log('target-num:', target-num)
+        }
+    }
+    for(let num of array){
+        return subsetSum(array.slice(1), target-num)
+    }
+    return false;
 }
+console.log('subsetSum([3, 34, 4, 12, 5, 12], 32):', subsetSum([3, 34, 4, 12, 5, 12], 32))
+
 
 module.exports = subsetSum;
