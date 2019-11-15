@@ -38,7 +38,6 @@ function reverseInPlace(array) {
     leftToRight += 1;
     rightToLeft -= 1;
   }
-  
   return array;
 }
 
