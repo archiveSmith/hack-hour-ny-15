@@ -38,3 +38,27 @@ function stringRotation(s1, s2) {
 console.log(stringRotation("hello", "hello"))
 
 module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};
+
+
+/*
+
+SOLUTION:
+
+Function isSubstring(string, sub) {
+  return string.indexOf(sub) > -1
+}
+​
+function isRotation(firstStr, secondStr) {
+  return isSubstring(firstStr + firstStr, secondStr);
+}
+​
+function stringRotation(firstStr, secondStr) {
+  return isRotation(firstStr, secondStr);
+}
+​
+function stringRotationOneLiner(first, second) {
+  return (first + first).indexOf(second) > -1
+};
+
+
+*/

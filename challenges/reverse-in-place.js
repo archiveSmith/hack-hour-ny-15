@@ -32,8 +32,27 @@ function reverseInPlace(array) {
     }
 
     return array
-    console.log(array)
 }
+
+
+/*SOLUTION
+
+function swap(arr, a, b) {
+  [arr[a], arr[b]] = [arr[b], arr[a]];
+}
+​
+function reverseInPlace(array) {
+  let leftToRight = 0;
+  let rightToLeft = array.length - 1;
+  while (leftToRight < rightToLeft) {
+    swap(array, leftToRight, rightToLeft);
+    leftToRight += 1;
+    rightToLeft -= 1;
+  }
+  return array;
+}
+
+*/
 
 reverseInPlace(["a", "p", "p", "l", "e"])
 // reverseInPlace([1, 2, 3, 4])

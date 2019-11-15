@@ -9,7 +9,28 @@
  */
 
 function subsetSum(array, target) {
+    //use a counter variable to see if anything ever equals the target
+    let counter = 0
+    array.sort()
 
+    //if any of the numbers in the array include the target just return that
+    if (array.includes(target)) return true
+
+    for (let i = 0; i < array.length; i++) {
+
+        counter += array[i]
+
+
+        console.log(counter)
+        if (counter === target) return true  
+    }
+
+    if (counter < target) return false
+    console.log(array)
+
+    return false
 }
+
+console.log(subsetSum([3, 34, 4, 12, 5, 12], 32)
 
 module.exports = subsetSum;

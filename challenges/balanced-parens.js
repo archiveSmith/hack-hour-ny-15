@@ -21,70 +21,46 @@
  * balancedParens(' var wow  = { yo: thisIsAwesome() }'); // true
  * balancedParens(' var hubble = function() { telescopes.awesome();'); // false
  *
- *
  */
 
-
-
-function balancedParens(input) {
-//     //How do you determine a balance? 
-/*     Balanced parenthesis is determined by whether or not the string replicated the 
-       proper syntactical structure of any bracket character. Does it close itself?
-        ie. () first and last elements close
-*/
-const inputArray = JSON.parse(JSON.stringify(input.split("")))
-let length = inputArray.length-1
-
-for (let i = 0; i < inputArray.length; i++) {
-    if (inputArray[0] === ")" || inputArray[0] === "}"|| inputArray[0] === "]") {
-        return false
-    } else if (inputArray[length] === "{" || inputArray[length] === "[" || inputArray[length] === "(") {
-        return false 
-    }
-      
-    // else if (inputArray[length] === "(") {
-    //     return false
-    // }
-}
-
-return true
-
-}
-
-// console.log(balancedParens('[](){}')); 
-//true
-// console.log(balancedParens('[({})]'));   
-// // // true
-console.log(balancedParens('[ ( ] { ) } ')); 
-// false
 module.exports = balancedParens;
 
+function balancedParens(input) {
+  //create a dictionary for possible brackets
+  const bracketDictionary = {
+    '[': ']',
+    '{': '}',
+    '(': ')'
+  };
+  //create a stack to store the opening brackets as a way to keep track of them
+  const brackTrackStack = [];
+  //iterate over inputted string
+  for (let i = 0; i < input.length; i += 1) {
+    //create a variable to reference the current character
+    const currentCharacter = input[i];
+    //ask if that character is an opening bracket
+    //if it is, then I want to push the bracket on to my stack
+    console.log("currentCharacter", currentCharacter)
+    if (currentCharacter === '[' || currentCharacter === '{' || currentCharacter === '(') brackTrackStack.push(currentCharacter);
+    //ask if the character is a closing bracket
+    else if (currentCharacter === ']' || currentCharacter === '}' || currentCharacter === ')'){
+    //create a variable to reference the last opening bracket
+      const lastOpenedBracket = brackTrackStack.pop();
 
+      //lastopened (
+      //if it is, then compare it against the value returned from popping the last opening bracket from the stack 
+      //and using it as a key to access the bracket dictionary
+      //if they don't match, then return false
+      if (bracketDictionary[lastOpenedBracket] !== currentCharacter) return false;
+    }
+  }
+  //if iterator completes, return true
+  return true;
+}
 
-// function balancedParens(input) {
-//     input = input.split("")
-//     //How do you determine a balance? 
-//     //If there's an even number you know it's balances
-//     //If there is an odd number you know it's false
+console.log(balancedParens('[(]{)}')); 
+// false
 
-//     const objectCounter = input.reduce( (accumulator, currentValue) => {
-//         if (!accumulator[currentValue]) {
-//             accumulator[currentValue] = 1
-//         } else {
-//             accumulator[currentValue] += 1
-//         }
-//         console.log(accumulator)
-//         return accumulator
-//     }, {})
-
-    
-//     if ((objectCounter["{"] === objectCounter["}"]) && (objectCounter["["] === objectCounter["]"]) && (objectCounter["("] === objectCounter[")"])) {
-//         return true 
-//     } 
-//     return false
-//     console.log(input)
-
-// }
 
 
 
