@@ -29,31 +29,31 @@ function romanNumeral(n) {
   let romanNum = '';
 
  for(let i = 0; i < decimalValue.length; i++){
-  if(n >= 1 && n < 4){
+  if(n >= 1){
     romanNum += 'I';
-  }else if(n >= 4 && n < 5){
+  }else if(n >= 4){
     romanNum += 'IV';
-  }else if(n >= 5 && n < 5){
+  }else if(n >= 5){
     romanNum += 'V';
-  }else if(n >= 9 && n < 9){
+  }else if(n >= 9){
     romanNum += 'IX';
-  }else if(n >= 10 && n < 100){
+  }else if(n >= 10){
     romanNum += 'X';
-  }else if(n >= 40 && n < 40){
+  }else if(n >= 40){
     romanNum += 'XL';
-  }else if(n >= 50 && n < 50){
+  }else if(n >= 50){
     romanNum += 'L';
-  }else if(n >= 90 && n < 90){
+  }else if(n >= 90){
     romanNum += 'XC';
-  }else if(n >= 100 && n < 100){
+  }else if(n >= 100){
     romanNum += 'C';
-  }else if(n >= 400 && n < 400){
+  }else if(n >= 400){
     romanNum += 'D';
-  }else if(n >= 500 && n < 500){
+  }else if(n >= 500){
   romanNum += 'CM';
-  }else if(n >= 900 && n < 900){
+  }else if(n >= 900){
     romanNum += 'C';
-  }else if(n >= 1000 && n < 1000){
+  }else if(n >= 1000){
     romanNum += 'M';
   }
   return romanNum;
