@@ -61,6 +61,6 @@ function romanNumeral(n) {
   return arr.reverse().toString().split(',').join('');
 }
 
-console.log(romanNumeral(54));
+// console.log(romanNumeral(1054));
 
 module.exports = romanNumeral;
