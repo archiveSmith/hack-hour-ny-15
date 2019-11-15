@@ -26,6 +26,7 @@
  */
 
 // approach
+
 // create an empty array to store stack
 // create an obj brackets with keys as open parens and values as closed parens
 // iterate through the input
@@ -45,6 +46,8 @@ function balancedParens(input){
 
   for (let i = 0; i < input.length; i += 1){
     const currElement = input[i];
+    console.log(currElement);
+    
 
     if (brackets[currElement]){
       stack.push(brackets[currElement]);
@@ -58,5 +61,8 @@ function balancedParens(input){
 console.log(balancedParens('[](){}')); // true
 console.log(balancedParens('[({})]')); // true
 console.log(balancedParens('[(]{)}')); // false
+console.log(balancedParens('[](){}')); // true
+console.log(balancedParens('[({})]'));   // true
 
 module.exports = balancedParens;
+)
