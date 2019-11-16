@@ -9,9 +9,21 @@
  */
 
 function subsetSum(array, target) {
-  for (let i = 0; i < array.length; i += 1) {
-    for (let j = 1; j < array.length; j += 1) {
-      if (array[i] + array[j] === target) return true;
+  // for (let i = 0; i < array.length; i += 1) {
+  //   for (let j = 1; j < array.length; j += 1) {
+  //     if (array[i] + array[j] === target) return true;
+  //   }
+  // }
+  // return false;
+  const sums = [0];
+  for (let i = 0; i < array.length; i++) {
+    const sumsCopy = [...sums];
+    for (let j = 0; j < sumsCopy.length; j++) {
+      const newSum = array[i] + sumsCopy[j];
+      if (newSum === target) return true;
+      if (newSum < target) {
+        sums.push(newSum);
+      }
     }
   }
   return false;
