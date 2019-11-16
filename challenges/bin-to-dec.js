@@ -14,7 +14,31 @@
  */
 
 function binToDec(binary) {
-
+  let iterable = String(binary).split('');
+  let decimal = 0;
+  let currentPlace = 0
+    while (iterable.length) {
+      if (iterable[iterable.length - 1] == 1) {
+        decimal += Math.pow(2,currentPlace)
+}
+    currentPlace += 1;
+    iterable.pop();
+}
+return decimal;
 }
 
+// function DectoBin(dec) {
+//   let iterable = String(dec).split('');
+//   let bin = 0;
+//   let currentPlace = 0
+//     while (iterable.length) {
+//       if (iterable[iterable.length - 1] == 1) {
+//         bin += Math.pow(10,currentPlace)
+// }
+//     currentPlace += 1;
+//     iterable.pop();
+// }
+// return bin;
+// }
+console.log(binToDec('10101011'))
 module.exports = binToDec;
