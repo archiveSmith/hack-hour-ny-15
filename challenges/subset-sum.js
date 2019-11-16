@@ -9,7 +9,24 @@
  */
 
 function subsetSum(array, target) {
+  const allSubsetArray = array.reduce(
+    (subsets, value) => subsets.concat(
+      subsets.map((set) => [value, ...set]),
+    ),
+    [[]],
+  );
 
+  for (let i = 0; i < allSubsetArray.length; i += 1) {
+    const subArray = allSubsetArray[i];
+    if (eval(subArray.join('+')) === target) return true;
+  }
+  return false;
 }
+
+// console.log(subsetSum([1, 2, 3, 4], 5));
+// console.log(subsetSum([3, 7, 4, 2], 5)) //- > true, 3 + 2 = 5
+// console.log(subsetSum([3, 34, 4, 12, 5, 12], 32)) //-> true, 3 + 12 + 5 + 12 = 32
+// console.log(subsetSum([8, 2, 4, 12], 13)) //-> false
+// console.log(subsetSum([8, -2, 1, -3], 6)) //-> true, 8 + 1 + (-3) = 6
 
 module.exports = subsetSum;
