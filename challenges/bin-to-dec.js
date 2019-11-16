@@ -27,10 +27,10 @@ function binToDec(binary) {
   return sum;
 }
 
-console.log(binToDec('11'));
-console.log(binToDec('100'));
-console.log(binToDec('101'));
-console.log(binToDec('0101'));
-console.log(binToDec('0'));
+// console.log(binToDec('11'));
+// console.log(binToDec('100'));
+// console.log(binToDec('101'));
+// console.log(binToDec('0101'));
+// console.log(binToDec('0'));
 
 module.exports = binToDec;
