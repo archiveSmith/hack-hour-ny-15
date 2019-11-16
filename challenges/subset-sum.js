@@ -10,6 +10,32 @@
 
 function subsetSum(array, target) {
 
+//brute force every combo and upon success change a boolean and then return out
+//Use closure to keep track of a boolean
+let isSubset = false;
+
+function innerSubestSum(remainingArray, target) {
+  // if I eventually get to zero then it is true
+    if (target === 0) {
+      isSubset = true;
+    }
+//otherwise my loop will continue to run
+for (let i = 0; i < remainingArray.length; i += 1) {
+  //slice out the current value
+  let part1 = remainingArray.slice(0, i);
+  let part2 = remainingArray.slice(i + 1, remainingArray.length)
+  let snippedArray = [...part1, ...part2];
+ //repeat the process with my new target value and the shortened array
+  innerSubestSum(snippedArray, target - remainingArray[i])
 }
 
+return isSubset;
+
+}
+return innerSubestSum(array, target);
+}
+// console.log(subsetSum([3, 7, 4, 2], 5))
+// console.log(subsetSum([3, 34, 4, 12, 5, 12], 32))
+// console.log(subsetSum([8, 2, 4, 12], 13))
+// console.log(subsetSum([8, -2, 1, -3], 6))
 module.exports = subsetSum;
