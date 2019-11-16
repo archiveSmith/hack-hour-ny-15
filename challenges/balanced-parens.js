@@ -65,7 +65,7 @@ function balancedParens(input) {
 }
 // [,
 
-const testStr = "[{](){"; // true
+const testStr = "asdsda[](asdasd){}"; // true
 console.log(balancedParens(testStr)); // false
 
 module.exports = balancedParens;
