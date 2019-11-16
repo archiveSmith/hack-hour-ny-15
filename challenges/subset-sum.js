@@ -9,7 +9,20 @@
  */
 
 function subsetSum(array, target) {
+  /*
+  - we need to iterate through the array of numbers and find a
+  subset of numbers that add up to the target value
+  - we can test every possible combination with the starting value
+  */
 
+  const numEls = {};
+  array.forEach((num) => (numEls[num] = num));
+  let numTar = target;
+
+}
+
+function closerToTarget(num1, num2, target) {
+  return ((num1 + num2 - target) < (num1 - target))
 }
 
 module.exports = subsetSum;
