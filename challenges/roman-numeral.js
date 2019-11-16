@@ -43,10 +43,10 @@ function romanNumeral(num) {
   };
 
   for (const key in romanNumeralList) {
-    console.log(num);
+    //  console.log(num);
     while (num >= romanNumeralList[key]) {
-      console.log(num);
-      console.log(romanNumeralList[key]);
+      //  console.log(num);
+      //  console.log(romanNumeralList[key]);
       // console.log()
       result += key;
       num -= romanNumeralList[key];
@@ -56,7 +56,7 @@ function romanNumeral(num) {
   return result;
 }
 
-console.log(romanNumeral(654));
+console.log(romanNumeral(173));
 
 
 // //  function convertToRoman(num) {
