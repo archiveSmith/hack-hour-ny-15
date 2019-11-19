@@ -11,7 +11,20 @@
 // matchWord('');  -> true
 
 function matchWord(str) {
+  if(str === '') return true;
 
+  const newStr = str.replace(/[^a-z0-9+]+/gi, ' ').trim();
+  const wordsArr = newStr.split(' ');
+
+  if(wordsArr.length % 2 !== 0) return false;
+
+  for(let i = 0; i < wordsArr.length; i += 1) {
+    let word = wordsArr[i].split('').reverse().join('')
+    
+    if(wordsArr.indexOf(word) === -1) return false;
+  };
+
+  return true;
 }
 
 module.exports = matchWord;
