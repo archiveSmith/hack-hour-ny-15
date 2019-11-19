@@ -19,7 +19,7 @@
  */
 
 function binToDec(binary) {
-   reverseBinary= binary.split("").reverse();
+   const reverseBinary= binary.split("").reverse();
     let sum = 0;
     for(let i = 0; i< binary.length ; i++){
         sum += Math.pow(2,i) * reverseBinary[i]
@@ -29,6 +29,11 @@ return sum;
 
 console.log('binToDec(0101):', binToDec("0101"))
 
+function binToDec2(binary) {
+ return  parseInt(binary, 2).toString(10);
+ }
+
+console.log('binToDec(0101):',binToDec2("0101"))
 function decToBin(decimal) {
     return parseInt(decimal, 10).toString(2)
 }
