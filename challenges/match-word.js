@@ -11,7 +11,37 @@
 // matchWord('');  -> true
 
 function matchWord(str) {
-
+let stack = [];
+let current = '';
+for (let i = 0; i < str.length; i++) {
+    //if letter, add to current word
+    if (str[i].toUpperCase() !== str[i].toLowerCase()) {
+        current += str[i].toLowerCase();
+        //if letter is last letter in the string
+        if (str.length === (i+1)) {
+            //this should probably be refactored into a helper function
+            let currentInReverse = current.split('').reverse().join('');
+            if (stack.length > 0 && stack[stack.length-1] === currentInReverse) {
+                stack.pop();
+                current = '';
+            }
+        }
+    }
+    //if not a letter, trigger word check if a word exists
+    else if (current.length > 0) {
+        //does it match the last word in stack? If so, remove from stack
+        let currentInReverse = current.split('').reverse().join('');
+        if (stack.length > 0 && stack[stack.length-1] === currentInReverse) {
+            stack.pop();
+            current = '';
+        }
+        else {
+            stack.push(current); 
+            current = '';
+        }
+    }
+}
+return (stack.length === 0);
 }
 
 module.exports = matchWord;
