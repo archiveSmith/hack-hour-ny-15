@@ -18,9 +18,10 @@ function binToDec(binary) {
     return parseInt((binary + '')
     .replace(/[^01]/gi, ''), 2);
       
+    
 
 }
 
-console.log(binToDec(11))
+console.log(binToDec("100"))
 
 module.exports = binToDec;
