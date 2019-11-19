@@ -12,7 +12,6 @@
 
 // ? Input is an array and a number
 // ? Output is a boolean
-
 // you could loop through the array
 // if the two numbers are greater than the target then keep moving
 // if the numbers are less then grab another number. 
@@ -20,7 +19,7 @@
 function subsetSum(array, target) {
   for (let i = 0; i < array.length; i++) {
     let current = array[i];
-    console.log(current);
+    // console.log(current);
     for (let j = 0; j < array.length -1; j++) {
       let next = array[j];
       
@@ -36,6 +35,8 @@ function subsetSum(array, target) {
   return false;
 }
 
-console.log(subsetSum([8, -2, 1, -3], 6));
+// could I do it recursively? 
+
+console.log(subsetSum([3, 34, 4, 12, 5, 12], 32));
 
 module.exports = subsetSum;
