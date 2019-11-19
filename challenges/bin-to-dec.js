@@ -26,9 +26,9 @@ function binToDec(binary) {
   return sumOut;
 }
 
-console.log(binToDec(101110));
-console.log(binToDec(0));
-console.log(binToDec(101011010010101));
-console.log(binToDec(10));
+// console.log(binToDec(101110));
+// console.log(binToDec(0));
+// console.log(binToDec(101011010010101));
+// console.log(binToDec(10));
 
 module.exports = binToDec;
