@@ -11,7 +11,24 @@
 // matchWord('');  -> true
 
 function matchWord(str) {
-
+    const wordStack = []
+    const re =/[^a-zA-Zi]+/
+    for (let word of  str.split(re).filter(e => e !== '')){
+        if (wordStack.length === 0)
+            wordStack.push(word) 
+        else if (wordStack[wordStack.length - 1].split('').reverse().join('').toLowerCase() === word.toLowerCase())  
+            wordStack.pop() 
+        else wordStack.push(word)
+    }
+    return wordStack.length === 0
 }
 
+
+
+
+
+
+
+
 module.exports = matchWord;
+
