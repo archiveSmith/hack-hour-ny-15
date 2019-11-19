@@ -13,8 +13,22 @@
  * Write a function that converts a decimal number to binary (then maybe hexadecimal)
  */
 
+// function binToDec(binary) {
+//   return parseInt(binary, 2);
+// }
+
 function binToDec(binary) {
-  return parseInt(binary, 2);
+  const newBin = binary.split('');
+  let power = 0;
+  let newNum;
+
+  for (let i = binary.length; i > 0; i -= 1) {
+    //  console.log(binary[i]);
+    newNum = Number(binary[i]) * (2 ** power);
+    // console.log(newNum);
+    power += 1;
+  }
+  return newNum;
 }
 
 console.log(binToDec('0101'));
