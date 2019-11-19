@@ -22,9 +22,6 @@ function romanNumeral(n) {
   // if so add a roman numeral letter for each time n is divided by 1000 with Math.floor
   // then subtract from n the amount added to the string (1000 x number of times the number divides equally)
 
-  if (n < 1 || !n) {
-    return 'Enter a positive number';
-  }
 
   const romanDict = {
     M: 1000,
@@ -60,7 +57,7 @@ function romanNumeral(n) {
   return romanString
 }
 
-// console.log(romanNumeral(549))
+console.log(romanNumeral(14))
 
 
 module.exports = romanNumeral;

@@ -15,7 +15,8 @@
 function anagrams(string, anaArray = [], remainingLetters = [], counter = 0,) {
   let newString = '';
   if (string.length === 1) {
-    counter = 0;
+    counter = 0; 
+    
     return string;
   }
 
@@ -44,5 +45,7 @@ function anagrams(string, anaArray = [], remainingLetters = [], counter = 0,) {
   return fixedLetter + anagrams(newString, anaArray = [], remainingLetters, counter)
 
 }
+
+console.log(anagrams('abc'))
 
 module.exports = anagrams;
