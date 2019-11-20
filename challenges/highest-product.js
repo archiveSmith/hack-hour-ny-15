@@ -3,15 +3,17 @@
  */
 
 function highestProduct(array) {
-    if (array.length < 3) {
-        return 'Minimum array of 3 required'
+    if (Array.isArray(array) && array.length > 3) {
+        const sortedArray = array.sort((a,b) => a-b)
+        // console.log(sortedArray)
+        return (sortedArray[sortedArray.length-1] * sortedArray[sortedArray.length-2] * sortedArray[sortedArray.length-3])
     }
-    const sortedArray = array.sort((a,b) => a-b)
-    // console.log(sortedArray)
-    return (sortedArray[sortedArray.length-1] * sortedArray[sortedArray.length-2] * sortedArray[sortedArray.length-3])
+    else {
+        return 0;
+    }
 }
 
 
 module.exports = highestProduct;
 
-// console.log(highestProduct([2,5,3,25,6,9]))
+// console.log(highestProduct([-2,-5,-3,-25,-6,-9]))
