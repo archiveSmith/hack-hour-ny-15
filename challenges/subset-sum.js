@@ -11,15 +11,25 @@
 function subsetSum(array, target) {
   //create an object where key:val = 5: [3,2]
 
-  return array.reduce((acc, curr, i) => {
-    if (curr) return array;
-  }, {});
-  for (let i = 0; i < array.length; i++) {}
+  // let cache = {};
+  for (let i = 0; i < array.length - 1; i++) {}
+
+  // for (let i = 0; i < array.length - 1; i++) {
+  //   let el = array[i];
+  //   if (el <= target) {
+  //     if (!cache.values[target - el]) {
+  //     }
+  //     cache[el] = target - el;
+  //   }
+  // }
 }
 
 module.exports = subsetSum;
 
 //iterate through array and cache each combo
-//[4,1,2,3], target = 5
-//whereby key is the element (4) and value is target-el = 1, pushed to obj
-//obj = {4:1, 1:4, 2:3, 3:2}
+//([3, 7, 4, 2], 5)
+//whereby if:
+//1. if el > target, ignore
+//2. if el is present in any values, ignore
+//key is the element (3) and value is target-el = 2, pushed to obj
+//obj = {3:2, 4:1, 2:3}
