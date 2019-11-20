@@ -4,6 +4,7 @@
 
 function highestProduct(array) {
     let doubleArray = array.concat(array)
+    if (array.length < 3 || array.constructor !== Array) return 0
     // console.log(doubleArray)
     return Math.max(...doubleArray.reduce((acc, next, index, array) => {
         let toPush = array[index]*array[index+1]*array[index+2]
@@ -14,7 +15,6 @@ function highestProduct(array) {
     },[]))
 }
 
-console.log(highestProduct([2,4,5,6]))
-
+console.log(highestProduct([2,3,4,5]))
 
 module.exports = highestProduct;
