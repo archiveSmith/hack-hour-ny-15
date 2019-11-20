@@ -3,8 +3,9 @@
  */
 
 function highestProduct(array) {
-
+  if (array.length < 3) return 'Array gotta be at least 3 numbahs';
+  const absArr = array.map((el) => el = Math.abs(el)).sort((a, b) => b - a);
+  return absArr[0] * array[1] * array[2];
 }
-
 
 module.exports = highestProduct;
