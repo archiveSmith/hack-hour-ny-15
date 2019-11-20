@@ -11,7 +11,25 @@
 // matchWord('');  -> true
 
 function matchWord(str) {
+  // strip str of non-alphabetic xters
+  let newStr = '';
+  const alph = 'abcdefghijklmnopqrstuvwxyz_ ';
+  // create a check for string not separated by space
+  if (str.indexOf(' ') === -1) return false;
 
+  for (let i = 0; i < str.length; i += 1) {
+    if (alph.includes(str[i])) newStr += str[i];
+  }
+  // create an object to store each chars in the string
+  const forwardDict = {};
+
+  for (let i = 0; i < str.length; i += 1) {
+    const char = str[i];
+    if(!forwardDict.hasOwnProperty(char) && (!forwardDict.hasOwnProperty(char.reverse())));
+    forwardDict[char] = true;
+  }
+
+  return true;
 }
 
 module.exports = matchWord;

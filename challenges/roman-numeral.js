@@ -52,11 +52,5 @@ function romanNumeral(n) {
   return romanNum;
 }
 
-// console.log(romanNumeral(3));
-// console.log(romanNumeral(4));
-// console.log(romanNumeral(5));
-// console.log(romanNumeral(9));
-// console.log(romanNumeral(10));
-// console.log(romanNumeral(40));
 
 module.exports = romanNumeral;

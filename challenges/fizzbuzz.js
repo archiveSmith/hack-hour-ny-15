@@ -17,7 +17,7 @@
 //                     16 ]
 
 function fizzbuzz(num) {
-
+  return ['fizz'];
 }
 
 module.exports = fizzbuzz;

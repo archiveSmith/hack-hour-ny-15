@@ -14,8 +14,7 @@
 */
 
 function drawStairs(n) {
-
+    console.log('*');
 }
-
 
 module.exports = drawStairs;
