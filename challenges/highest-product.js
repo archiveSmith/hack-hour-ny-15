@@ -6,9 +6,11 @@ function highestProduct(array) {
     let doubleArray = array.concat(array)
     // console.log(doubleArray)
     return Math.max(...doubleArray.reduce((acc, next, index, array) => {
-        acc.push((array[index]*array[index+1]*array[index+2]).toString())
-        return acc
-    },[]).filter(e => e !== 'NaN'))
+        if (Number.isInteger((array[index]*array[index+1]*array[index+2]))) {
+        acc.push((array[index]*array[index+1]*array[index+2]))
+        return acc 
+        } else return acc
+    },[]))
 }
 
 console.log(highestProduct([2,4,5,6]))
