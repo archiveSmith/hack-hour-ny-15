@@ -11,7 +11,31 @@
 // matchWord('');  -> true
 
 function matchWord(str) {
+    //first check to see if there is a space or underscore in the str, if there isn't return false -- DEFAULT TO FALSE
+    let chars = str
+        //then separate the string by underscore and/or space
+    if (chars.includes("_")) {
+        chars = str.split("_")
+    } else if (chars.includes(" ")) {
+        chars = str.split("")
+    }
+    //this should hopefully give you an array of words as opposed to one long string
+    chars.replace
+    let last = chars.length - 1
+
+    for (let i = 0; i < chars.length; i++) {
+        // console.log(chars[i])
+        if (chars[i] !== chars[last]) {
+            return false
+        }
+
+        console.log(chars[last])
+        last-=1
+    }
+
+    return true 
 
 }
 
+console.log(matchWord("END_DNE"))
 module.exports = matchWord;
