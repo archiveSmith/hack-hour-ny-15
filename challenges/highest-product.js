@@ -7,7 +7,7 @@ function highestProduct(array) {
         return 'Minimum array of 3 required'
     }
     const sortedArray = array.sort((a,b) => a-b)
-    console.log(sortedArray)
+    // console.log(sortedArray)
     return (sortedArray[sortedArray.length-1] * sortedArray[sortedArray.length-2] * sortedArray[sortedArray.length-3])
 }
 
