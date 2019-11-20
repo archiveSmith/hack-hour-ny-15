@@ -6,8 +6,9 @@ function highestProduct(array) {
     let doubleArray = array.concat(array)
     // console.log(doubleArray)
     return Math.max(...doubleArray.reduce((acc, next, index, array) => {
-        if (Number.isInteger((array[index]*array[index+1]*array[index+2]))) {
-        acc.push((array[index]*array[index+1]*array[index+2]))
+        let toPush = array[index]*array[index+1]*array[index+2]
+        if (Number.isInteger(toPush)) {
+        acc.push(toPush)
         return acc 
         } else return acc
     },[]))
