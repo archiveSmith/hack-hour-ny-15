@@ -3,22 +3,24 @@
  */
 
 function highestProduct(array) {
-  let highestProd = 1;
-  if (array.length < 3) return -1;
+  if (array.length < 3 || !Array.isArray(array)) return 0;
+  let highestProdPos = 1;
+  let highestProdNeg;
   const sortedArray = array.sort((a, b) => a - b);
-  //console.log(sortedArray);
+  if (Math.sign(sortedArray[0]) === -1) {
+    const newArr = sortedArray.slice(0, 3);
+    highestProdNeg = newArr.reduce((cv, acc) => cv * acc);
+  }
   let i = 0;
   while (i < 3) {
     const lastEl = sortedArray.pop();
-    //console.log(lastEl);
-    highestProd *= lastEl;
-    //console.log(highestProd);
+    highestProdPos *= lastEl;
     i += 1;
   }
-  return highestProd;
+  if (highestProdPos > highestProdNeg) return highestProdPos;
+  return highestProdNeg;
 }
 
-
-//console.log(highestProduct([4, 2, 5, 1, 3]));
+// console.log(highestProduct([1, 2, 3, 4, 5, 1, 2, 3, -4, -8]));
 
 module.exports = highestProduct;
