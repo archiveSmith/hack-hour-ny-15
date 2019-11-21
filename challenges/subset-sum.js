@@ -93,6 +93,38 @@ function subsetSumRecursive(array, target) {
   
   return subsetSum(array.slice(1), target - array[0]) || subsetSum(array.slice(1), target);
 }
+
+
+// Iish Dave Approach
+function matchWord(str) {
+  if (!str) return true;
+  // clean up with regex
+  console.log(str)
+  str = str.replace(/[\W_]+/g, ' '); // replaces multiple white spaces with a single " "
+  console.log(str)
+  str = str.replace(/^[\s]|[\s]$/g, ''); // ^ matches start $ matches ends, and eliminates it
+  console.log(str)
+  str = str.toLowerCase(); // turn into lower case to validate both lower case and upper case
+  const words = str.split(' ');
+  console.log(words) 
+  const matchArray = [];
+  for (let word of words) {
+    if (
+      !matchArray.length ||
+      word
+        .split('')
+        .reverse()
+        .join('') !== matchArray[matchArray.length - 1]
+    )
+      matchArray.push(word);
+    else {
+      matchArray.pop();
+    }
+  }
+  if (matchArray.length) return false;
+  return true;
+}
+
 console.log(subsetSum([3, 7, 4, 2], 5)); // - > true, 3 + 2 = 5
 console.log(subsetSum([3, 34, 4, 12, 5, 12], 32)); // -> true, 3 + 12 + 5 + 12 = 32
 console.log(subsetSum([8, 2, 4, 12], 13)); // -> false
