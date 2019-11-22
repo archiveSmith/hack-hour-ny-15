@@ -21,7 +21,7 @@ function zip(l1, l2) {
     return zip(l1.next,l2.next, currentNode.next.next) 
   }
   zipR(l1.next,l2, head);
-
+  return head;
 };
 
 
