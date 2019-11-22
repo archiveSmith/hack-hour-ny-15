@@ -3,9 +3,14 @@
  */
 
 function highestProduct(array) {
-  if (array.length < 3) return 0;
-  const absArr = array.map((el) => el = Math.abs(el)).sort((a, b) => b - a);
-  return absArr[0] * array[1] * array[2];
+  if (array.length < 3 || !Array.isArray(array)) return 0;
+  array.sort((a, b) => Math.abs(b) - Math.abs(a));
+  console.log(array);
+  let product;
+  if (array[0] < 0 && array[1] < 0 && array[2] > 0 || array[1] < 0 && array[2] < 0 && array[0] > 0 || array[0] < 0 && array[2] < 0 && array[1] > 0) {
+    console.log('adf');
+    return array[0] * array[1] * array[2];
+  }
 }
-
+console.log(highestProduct([-200, -12, 5, 12, 50]));
 module.exports = highestProduct;
