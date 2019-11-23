@@ -33,6 +33,7 @@ function zip(l1, l2) {
       currPointer.next = l2.head;
     }
   }
+
   return l1;
 }
 
