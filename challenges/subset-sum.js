@@ -15,14 +15,27 @@ function subsetSum(array, target) {
   - we can test every possible combination with the starting value
   */
 
-  const numEls = {};
-  array.forEach((num) => (numEls[num] = num));
-  let numTar = target;
+  const finalValues = {
+    0: true,
+  }
 
+  let keys = Object.keys(finalValues);
+  let index = 0;
+  while (index < array.length) {
+    for (let i = 0; i < keys.length; ++i) {
+      let newValue = array[index] + Number(keys[i]);
+      finalValues[newValue] = true;
+    }
+    keys = Object.keys(finalValues);
+    index++;
+  }
+
+  return finalValues[target] || false;
 }
 
-function closerToTarget(num1, num2, target) {
-  return ((num1 + num2 - target) < (num1 - target))
-}
+// console.log(subsetSum([3, 7, 4, 2], 5)); //-> true, 3 + 2 = 5
+// console.log(subsetSum([3, 34, 4, 12, 5, 12], 32)); //-> true, 3 + 12 + 5 + 12 = 32
+// console.log(subsetSum([8, 2, 4, 12], 13)); //-> false
+// console.log(subsetSum([8, -2, 1, -3], 6)); //-> true, 8 + 1 + (-3) = 6  
 
 module.exports = subsetSum;
