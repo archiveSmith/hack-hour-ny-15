@@ -11,6 +11,15 @@ function Node(val) {
 }
 
 function zip(l1, l2) {
+  if(!l1 && !l2) {
+    return 'l1 and l2 must be defined';
+  }
+  if(!l1) {
+    return l2;
+  }
+  if(!l2) {
+    return l1;
+  }
   const arrayOfL1 = [l1];
   const arrayOfL2 = [l2];
   let tracker1 = l1.next;
@@ -43,30 +52,30 @@ function zip(l1, l2) {
 };
 
 
-const dbacks = new Node('arizona');
-const dodgers = new Node('los angeles');
-const giants = new Node('san francisco');
-const padres = new Node('san diego');
-const rockies = new Node('colorado');
-dbacks.next = dodgers;
-dodgers.next = giants;
-giants.next = padres;
-padres.next = rockies;
+// const dbacks = new Node('arizona');
+// const dodgers = new Node('los angeles');
+// const giants = new Node('san francisco');
+// const padres = new Node('san diego');
+// const rockies = new Node('colorado');
+// dbacks.next = dodgers;
+// dodgers.next = giants;
+// giants.next = padres;
+// padres.next = rockies;
 
 // console.log(dbacks);
 
-const mets = new Node('new york');
-const braves = new Node('atlanta');
-const phillies = new Node('philadelphia');
+// const mets = new Node('new york');
+// const braves = new Node('atlanta');
+// const phillies = new Node('philadelphia');
 // const marlins = new Node('florida');
 // const nationals = new Node('washington');
-mets.next = braves;
-braves.next = phillies;
+// mets.next = braves;
+// braves.next = phillies;
 // phillies.next = marlins;
 // marlins.next = nationals;
 
 // console.log(mets);
 
-console.log(zip(dbacks, mets));
+// console.log(zip(dbacks, mets));
 
 module.exports = {Node: Node, zip: zip};
