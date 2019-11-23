@@ -10,24 +10,7 @@
 // create another loop to check
 
 function highestProduct(array) {
-  let product = 1;
-  let largest = array[0] * array[1] * array[2];
-
-  for (let i = 0; i < array.length; i++) {
-    // console.log(array[i]);
-    for (let j = i + 1; j < array.length; j++) {
-      // console.log(array[j]);
-      for (let k = j + 1; k < array.length; k++) {
-        // console.log(array[j]);
-        product = (array[i] * array[j] * array[k]);
-        // console.log(product)
-        if (product > largest) {
-          largest = product;
-        }
-      }
-    }
-  }
-  return largest;
+  
 }
 
 console.log(highestProduct([2, 4, 6, 8, 10, 12]));
