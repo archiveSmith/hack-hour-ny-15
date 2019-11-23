@@ -5,12 +5,21 @@
  * BONUS: Do this in place
  */
 
+ class LinkedList(){
+   constructor(){
+    this.value = val;
+    this.next = null;
+   }
+
+ }
+
 function Node(val) {
   this.value = val;
   this.next = null;
 }
 
 function zip(l1, l2) {
-};
+  
+}
 
-module.exports = {Node: Node, zip: zip};
+module.exports = { Node: Node, zip: zip };
