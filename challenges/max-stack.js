@@ -7,7 +7,29 @@
  */
 
 function Stack() {
-  // body...
+  const stackOut = {
+    elements: [4, 3, 1, 2],
+    push: function(numIn) {
+      this.elements = this.elements.concat(numIn);
+      return this.elements.length;
+    },
+    pop: function() {
+      let elemOut = this.elements[this.elements.length - 1];
+      this.elements = this.elements.slice(0, this.elements.length - 1);
+      return elemOut;
+    },
+    getMax: function() {
+      const tempSorted = this.elements.sort();
+      return tempSorted[tempSorted.length - 1];
+    }
+  };
+
+  return stackOut;
 }
+
+let myStack = Stack();
+console.log(myStack.push(-999));
+console.log(myStack.pop());
+console.log(myStack.getMax());
 
 module.exports = Stack;

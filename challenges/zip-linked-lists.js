@@ -39,14 +39,25 @@ var list2 = {
 
 function zip(l1, l2) {
   const listOut = {};
-  let l1Head = l1.next;
-  let l2Head = l2.next;
+  
+  let l1Head = l1.data;
+  let l1Next = l1.next;
+  let l2Head = l2.data;
+  let l2Next = l2.next;
 
-  while (l1Head !== null && l2Head !== null) {
-    listOut.data = currentNode.data;
+  let currentNode = listOut;
+  currentNode.data = l1Head;
+  currentNode.next = l1Next;
 
-    l1Head = currentNode.next;
-  }
+  console.log(listOut);
+
+  currentNode = listOut.next;
+  currentNode.data = l2Head;
+  currentNode.next = l2Next;
+
+  console.log(listOut);
 }
+
+zip(list1, list2);
 
 module.exports = { Node: Node, zip: zip };
