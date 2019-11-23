@@ -21,6 +21,6 @@ function highestProduct(array) {
   return highestProdNeg;
 }
 
-// console.log(highestProduct([1, 2, 3, 4, 5, 1, 2, 3, -4, -8]));
+// console.log(highestProduct([1, 2, 3, 4, 7, 1, 2, 9, -15, -25]));
 
 module.exports = highestProduct;
