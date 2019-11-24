@@ -14,7 +14,12 @@
  */
 
 function binToDec(binary) {
+  let count = 0;
+  const obj = {};
 
+  for(let i = 0; i < binary.length; i++) {
+    
+  }
 }
 
 module.exports = binToDec;

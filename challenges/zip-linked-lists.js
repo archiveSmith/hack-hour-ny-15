@@ -10,7 +10,25 @@ function Node(val) {
   this.next = null;
 }
 
-function zip(l1, l2) {
+function zip(left, right) {
+  const head = left;
+
+  
+  while (left !== null && right !== null) {
+    // Note: this if statement might not work; needs more revision
+    if (head.next === null) {
+      head.next = right;
+      return head;
+    }
+
+    const leftOGNext = left.next;
+    const rightOGNext = right.next;
+    left.next = right;
+    right.next = leftOGNext;
+    right = rightOGNext;
+  }
+
+  return head;
 };
 
 module.exports = {Node: Node, zip: zip};

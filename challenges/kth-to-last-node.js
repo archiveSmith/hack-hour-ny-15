@@ -42,6 +42,66 @@ function kthToLastNode(k, head) {
     newCurr = newCurr.next;
   }
 }
+
+/****************************************************************************************************** */
+// Solution 2
+
+// function kthToLastNode(k, head) {
+//   const valueAccumulator = [];
+//   let currNode = head;
+//   while (currNode){
+//     const currNodeVal = currNode.value;
+//     valueAccumulator.push(currNodeVal);
+//     currNode = currNode.next;
+//   }
+//   if (k > valueAccumulator.length) return 'What are you doing???';
+//   return valueAccumulator[valueAccumulator.length - k];
+// }
+/****************************************************************************************************** */
+// Solution 3, recursively 
+
+// function kthToLastNodeRecursive (k, head) {
+//   // create an array to house values living in each node
+//   const linkedListValues = [];
+//   // create recursive helper function to iterate over the LL
+//   function recursiveIterator (currNode) {
+//     // upon recursive helper hitting 'null', it should return and end recursion
+//     if (currNode === null) return;
+//   // inside of helper function, access the value of current node and push it into the array storing the values
+//     const currNodeVal = currNode.value;
+//     linkedListValues.push(currNodeVal);
+//     recursiveIterator(currNode.next);
+//   }
+//   // invoke recusive helper with inputted 'head'
+//   recursiveIterator(head);
+//   if (k > linkedListValues.length) return 'What are you doing???';
+//   // return the value in the storage arrage at storage.length - k
+//   return linkedListValues[linkedListValues.length - k];
+// }
+
+/****************************************************************************************************** */
+// Solution 3, tail-call recursion
+
+// function kthToLastNodeTailCall(k, head) {
+//   // create an array to house values living in each node
+//   const linkedListValues = [];
+//   // create recursive helper function to iterate over the LL
+//   function recursiveIterator (currNode, linkedListValues) {
+//     // upon recursive helper hitting 'null', it should return and end recursion
+//     if (currNode === null) {
+//       return linkedListValues[linkedListValues.length - k];
+//     }
+//     // inside of helper function, access the value of current node and push it into the array storing the values
+//     const currNodeVal = currNode.value;
+//     linkedListValues.push(currNodeVal);
+//     return recursiveIterator(currNode.next, linkedListValues);
+//   }
+//   // invoke recusive helper with inputted 'head'
+//   return recursiveIterator(head, linkedListValues);
+// }
+
+
+
 // const a = new Node('A');
 // const b = new Node('B');
 // const c = new Node('C');

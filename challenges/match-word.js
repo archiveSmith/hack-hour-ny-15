@@ -13,18 +13,52 @@
 function matchWord(str) {
   if(str === '') return true;
 
-  const newStr = str.replace(/[^a-z0-9+]+/gi, ' ').trim();
+  const newStr = str.replace(/[^a-zA-Z0-9+]+/gi, ' ').trim().toLowerCase();
+
   const wordsArr = newStr.split(' ');
 
   if(wordsArr.length % 2 !== 0) return false;
 
-  for(let i = 0; i < wordsArr.length; i += 1) {
+  for(let i = 0, j = wordsArr.length - 1; i < wordsArr.length; i += 1, j -= 1) {
     let word = wordsArr[i].split('').reverse().join('')
-    
-    if(wordsArr.indexOf(word) === -1) return false;
+
+    if(wordsArr[i] !== wordsArr[j]) return false;
+    // if(wordsArr.indexOf(word.toLowerCase()) === -1 ) return false;
   };
 
   return true;
 }
 
-module.exports = matchWord;
+console.log(matchWord('IF()()fi[]'))
+
+/************************************************************************************ */
+//Solution 1
+
+function matchWord(str) {
+  if (!str) return true;
+  // clean up with regex
+  console.log(str)
+  str = str.replace(/[\W_]+/g, ' '); // replaces multiple white spaces with a single " "
+  console.log(str)
+  str = str.replace(/^[\s]|[\s]$/g, ''); // ^ matches start $ matches ends, and eliminates it
+  console.log(str)
+  str = str.toLowerCase(); // turn into lower case to validate both lower case and upper case
+  const words = str.split(' ');
+  console.log(words) 
+  const matchArray = [];
+  for (let word of words) {
+    if (
+      !matchArray.length ||
+      word
+        .split('')
+        .reverse()
+        .join('') !== matchArray[matchArray.length - 1]
+    )
+      matchArray.push(word);
+    else {
+      matchArray.pop();
+    }
+  }
+  if (matchArray.length) return false;
+  return true;
+}

@@ -42,4 +42,27 @@ function stringRotation(s1, s2) {
   return false;
 }
 
+/********************************************************************************************************* */
+// Solution 
+
+function isSubstring(string, sub) {
+  return string.indexOf(sub) > -1
+}
+​
+function isRotation(firstStr, secondStr) {
+  return isSubstring(firstStr + firstStr, secondStr);
+}
+​
+function stringRotation(firstStr, secondStr) {
+  return isRotation(firstStr, secondStr);
+}
+
+/********************************************************************************************************* */
+// Solution 2
+​
+function stringRotationOneLiner(first, second) {
+  return (first + first).indexOf(second) > -1
+};
+
+
 module.exports = { isSubstring: isSubstring, stringRotation: stringRotation };
