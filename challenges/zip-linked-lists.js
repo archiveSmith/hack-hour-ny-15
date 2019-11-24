@@ -10,7 +10,4 @@ function Node(val) {
   this.next = null;
 }
 
-function zip(l1, l2) {
-}
-
 module.exports = { Node, zip };
