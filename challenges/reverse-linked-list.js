@@ -41,7 +41,7 @@ function reverseLinkedList(head) {
             following = following.next
             current.next = previous
             previous = current          
-            current = following         // <===== 2d
+            current = following         
           }
         
           console.log(previous)
