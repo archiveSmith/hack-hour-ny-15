@@ -14,4 +14,14 @@ function modemean(array) {
 
 }
 
+/*
+const freq = {};
+
+use reduce to store and calculate the sum in the sum reduce
+get the mean = Math.floor(sum / arr.length);
+
+let mode = -Infinity // this is to account for -ive numbers;
+
+*/
+
 module.exports = modemean;
