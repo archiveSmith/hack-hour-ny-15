@@ -11,10 +11,21 @@ function Node(val) {
 }
 
 function zip(l1, l2) {
-  let sever = l1.next;
+  let snip = l1.next;
   l1.next = l2;
-  sever = l2.next;
+  let snip2 = l1.next.next;
+  l1.next.next = snip;
+  snip = l1.next.next.next;
+  l1.next.next.next = snip2;
+  snip2 = l1.next.next.next.next;
+  l1.next.next.next.next = snip;
+  l1.next.next.next.next.next = snip2;
   console.log(l1);
+  console.log(l1.next);
+  console.log(l1.next.next);
+  console.log(l1.next.next.next);
+  console.log(l1.next.next.next.next);
+  console.log(l1.next.next.next.next.next);
 }
 
 
