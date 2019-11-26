@@ -13,7 +13,7 @@
   */
 
 function anagrams(string) {
-
+  return true;
 }
 
 module.exports = anagrams;

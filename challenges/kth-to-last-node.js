@@ -48,8 +48,4 @@ function kthToLastNode(k, head) {
   return -1;
 }
 
-const myNode = new Node('A');
-myNode.add()
-console.log(myNode);
-
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
