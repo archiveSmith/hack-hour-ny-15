@@ -8,7 +8,11 @@
 
 function Stack() {
   const stackOut = {
-    elements: [4, 3, 1, 2],
+    elements: [],
+    maxVal: function() {
+      const tempSorted = this.elements.sort();
+      return tempSorted[tempSorted.length - 1];
+    },
     push: function(numIn) {
       this.elements = this.elements.concat(numIn);
       return this.elements.length;
@@ -19,8 +23,7 @@ function Stack() {
       return elemOut;
     },
     getMax: function() {
-      const tempSorted = this.elements.sort();
-      return tempSorted[tempSorted.length - 1];
+      this.maxVal();
     }
   };
 
@@ -28,6 +31,8 @@ function Stack() {
 }
 
 let myStack = Stack();
+console.log(myStack.push(1));
+console.log(myStack.push(5));
 console.log(myStack.push(-999));
 console.log(myStack.pop());
 console.log(myStack.getMax());
