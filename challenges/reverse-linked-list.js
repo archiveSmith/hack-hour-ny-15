@@ -30,6 +30,7 @@ function Node(value) {
 
 function reverseLinkedList(head) {
   // return head if there are no other node in the linkList
+  if (!head || !head.next) return head;
   let node = head;
   // initialize tracking variable to be reasigned as I move from left to right;
   let previous;
