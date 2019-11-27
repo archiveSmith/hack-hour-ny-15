@@ -10,4 +10,31 @@ function Node(val) {
   this.next = null;
 }
 
+function Node(val) {
+  this.value = val;
+  this.next = null;
+}
+​
+function zip(left, right) {
+  const head = left;
+  while (left !== null || right !== null) {
+    if (left === null) {
+      right.next = left;
+      return head;
+    }
+    if (right === null) {
+      left.next = right;
+      return head;
+    }
+    const leftsOGNext = left.next;
+    const rightsOGNext = right.next;
+    left.next = right;
+    right.next = leftsOGNext;
+    left = leftsOGNext;
+    right = rightsOGNext;
+  }
+  return head;
+};
+
+
 module.exports = { Node, zip };

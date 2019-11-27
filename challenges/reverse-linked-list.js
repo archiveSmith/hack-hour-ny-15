@@ -13,16 +13,30 @@ function Node(value) {
   this.next = null;
 }
 
-function reverseLinkedList(head) {
-  // assign new node to head and check to see if it contains a
-  let newStart;
-  const newLinkedList = new Node(head);
-  if (newLinkedList.next === null) {
-
+function reverseInPlaceIterative(head) {
+  let prev = null;
+  let temp;
+  while (head) {
+    temp = head.next;
+    head.next = prev;
+    prev = head;
+    head = temp;
   }
+  return prev;
 }
 
+// // RECURSIVE APPROACH: O(n) time & O(n) space
+// function reverseInPlaceRecursive(head) {
+//   if (!head || !head.next) {
+//     return head;
+//   }
+//   let temp = reverse(head.next);
+//   head.next.next = head;
+//   head.next = undefined;
+//   return temp;
+// }
 
-console.log(reverseLinkedList());
+
+console.log(reverseInPlaceIterative());
 
 module.exports = { Node, reverseLinkedList };
