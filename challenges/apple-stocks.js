@@ -21,11 +21,13 @@ calculate profit along the array.
 
 const highestProfit = apple_stock => {
 if(!Array.isArray(apple_stock)) return 0;
+if(apple_stock.length===0) return 0;
+
 let min = apple_stock[0];
 let max = apple_stock[0];
 const highestArray = [];
-for(let i=1; i<apple_stock.length; i++){
-
+for(let i=0; i<apple_stock.length; i++){
+    if(isNaN(apple_stock[i])) return 0;
     if(apple_stock[i]<min && i!==apple_stock.length-1){
         min = apple_stock[i];
         max = apple_stock[i];
