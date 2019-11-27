@@ -34,9 +34,11 @@ const highestProfit = (apple_stock) => {
         curDiff = null;
       }
     }
-    if (maxProfit <= 0) return 0;
   }
+  if (maxProfit <= 0) return 0;
   return maxProfit;
 };
+
+console.log(highestProfit([1000, 500, 1500, 2000, 0]));
 
 module.exports = { highestProfit };
