@@ -20,7 +20,33 @@ calculate profit along the array.
 */
 
 const highestProfit = apple_stock => {
-
+    //need to find the lowest and highest numbers where lowest is to the left of highest
+    if (Array.isArray(apple_stock)) {
+        let lowest = apple_stock[0];
+        let tempLow = 0;
+        let highest = 0;
+        for (let i = 0; i < apple_stock.length; i++) {
+            if (apple_stock[i] < lowest) {
+                console.log("setting tempLow", i);
+                tempLow = i;
+            }
+            if (apple_stock[i] > highest && i > tempLow) {
+                lowest = apple_stock[tempLow];
+                highest = apple_stock[i];
+            }
+        }
+        //checks for profit
+        if ((highest - lowest) > 0) {
+            return highest - lowest;
+        }
+        return 0;
+    }
+    return 0;
 }
 
 module.exports = {highestProfit}
+
+// console.log(highestProfit([1000, 500, 1500, 2000, 0]));
+// console.log(highestProfit([0, 500, 1500, 3000, 0]));
+// console.log(highestProfit('string'));
+// console.log(highestProfit([2000, 1500, 500, 0]));
