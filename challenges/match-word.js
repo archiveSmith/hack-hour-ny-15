@@ -11,18 +11,16 @@
 // matchWord('');  -> true
 
 function matchWord(str) {
+  if (str === '') return true;
   const letters = /[^A-Za-z]+/g;
-  const cleaned = str.replace(letters, '');
-  const trackStack = [];
-  console.log(cleaned);
-  for (let i = 0; i < cleaned.length; i += 1) {
-    trackStack.push(cleaned[i]);
-    if (trackStack[i] === trackStack[i - 1]) {
-      trackStack.pop();
-      trackStack.pop();
-    }
+  let cleaned = str.replace(letters, ' ');
+  cleaned = cleaned.toLowerCase().trim().split(' ');
+  const trackStack = [cleaned[0]];
+  for (let i = 1; i < cleaned.length; i += 1) {
+    if (cleaned[i] === trackStack[trackStack.length - 1].split('').reverse().join('')) trackStack.pop();
+    else trackStack.push(cleaned[i]);
   }
-  console.log(trackStack);
+  return trackStack.length === 0;
 }
-matchWord('asdf');
+
 module.exports = matchWord;
