@@ -21,46 +21,33 @@ function Node(val) {
   this.next = null;
 }
 
- const a = new Node('A');
- const b = new Node('B');
- const c = new Node('C');
- const d = new Node('D');
- const e = new Node('E');
+const a = new Node('A');
+const b = new Node('B');
+const c = new Node('C');
+const d = new Node('D');
+const e = new Node('E');
 
- a.next = b;
- b.next = c;
- c.next = d;
- d.next = e;
+a.next = b;
+b.next = c;
+c.next = d;
+d.next = e;
+
+console.log(a);
 
 
 function kthToLastNode(k, head) {
+  const cache = {};
+  let current = head;
   let counter = 1;
-  function llCounter (head) {
-    if (!head.next) {
-      return counter
-    }
-    else {
-    counter += 1
-    }
-    head = head.next
-    return llCounter(head)
+  while (current) {
+    if (!current.next) cache.length = counter;
+    cache[counter] = current.value;
+    current = current.next;
+    counter += 1;
   }
-  llCounter(head)
-  function retrieve (head) {
-    let innerCounter = 6
-    while (innerCounter != counter + 1 - k){
-      function anotherFunc (head) {
-        innerCounter += 1
-        head = head.next
-        return head.next
-      }
-      anotherFunc(head)
-    }
-    return head.next.value
-  }
-  let result = retrieve(head)
-  return result
+  return cache[cache.length - k + 1];
 }
-console.log(kthToLastNode(5, a))
 
-module.exports = {Node: Node, kthToLastNode: kthToLastNode};
+console.log(kthToLastNode(3, a));
+
+module.exports = { Node, kthToLastNode };
