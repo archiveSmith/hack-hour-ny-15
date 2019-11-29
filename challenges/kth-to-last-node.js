@@ -33,7 +33,7 @@ function kthToLastNode(k, head) {
     current = current.next;
     counter += 1;
   }
-  if (k > cache.length) return 'List does not have that many nodes';
+  if (k > cache.length) return 'List does not have that many nodes!';
   return cache[cache.length - 4 + 1];
 }
 
