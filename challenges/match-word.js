@@ -17,7 +17,7 @@ function matchWord(str) {
   cleaned = cleaned.toLowerCase().trim().split(' ');
   const trackStack = [cleaned[0]];
   for (let i = 1; i < cleaned.length; i += 1) {
-    if (cleaned[i] === trackStack[trackStack.length - 1].split('').reverse().join('')) {trackStack.pop()};
+    if (cleaned[i] === trackStack[trackStack.length - 1].split('').reverse().join('')) trackStack.pop();
     else trackStack.push(cleaned[i]);
   }
   return trackStack.length === 0;
