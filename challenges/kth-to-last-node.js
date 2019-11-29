@@ -21,7 +21,6 @@ function Node(val) {
   this.next = null;
 }
 
-
 function kthToLastNode(k, head) {
   if (k <= 0) return 'K must be a positive integer';
   const cache = {};
@@ -33,8 +32,8 @@ function kthToLastNode(k, head) {
     current = current.next;
     counter += 1;
   }
-  if (k > cache.length) { return 'List does not have that many nodes!'; }
-  return cache[cache.length - 4 + 1];
+  if (k > cache.length) return undefined;
+  return cache[cache.length - k + 1];
 }
 
 module.exports = { Node, kthToLastNode };
