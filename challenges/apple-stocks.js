@@ -19,8 +19,37 @@ calculate profit along the array.
 
 */
 
+//min = 1000
+//max = 1000
+//profit = 0
+
 const highestProfit = apple_stock => {
+  let profitArr = [];
+  //i: 1000
+  //j: 500
 
-}
+  for (let i = 0; i < apple_stock.length; i++) {
+    console.log(" i:", i, apple_stock[i]); //1000
+    for (let j = 1; j < apple_stock.length; j++) {
+      console.log(" j:", j, apple_stock[j]); //500, 1500, 2000
+      let currentProfit = apple_stock[j] - apple_stock[i]; //-500, 500, 1000,
+      if (currentProfit > 0) {
+        profitArr.push(apple_stock[j] - apple_stock[i]);
+      }
+    }
+  }
 
-module.exports = {highestProfit}
+  console.log(profitArr);
+
+  if (profitArr.length > 0) {
+    return Math.max(...profitArr);
+  } else {
+    return 0;
+  }
+};
+
+const testArr = [1000, 500, 1500, 2000, 3000];
+const testCase = highestProfit(testArr);
+console.log(testCase);
+
+module.exports = { highestProfit };
