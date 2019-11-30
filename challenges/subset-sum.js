@@ -9,12 +9,15 @@
  */
 
 function subsetSum(array, target) {
-  if (array.includes(target)) return true;
-
-  for (let subsetSize = 2; subsetSize < array.length; subsetSize += 1) {
-    
+  const sets = [[]];
+  for (let i = 0; i < array.length; i += 1) {
+    const setsLength = sets.length;
+    for (let j = 0; j < setsLength; j += 1) {
+      if (Number(sets[j]) + array[i] === target) return true;
+      sets.push(Number(sets[j]) + array[i]);
+    }
   }
+  return false;
 }
-
 
 module.exports = subsetSum;
