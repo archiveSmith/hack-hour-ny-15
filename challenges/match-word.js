@@ -15,7 +15,7 @@ backwards counterpart. Words must be separated by space or
 
 function matchWord(str) {
 // filter out characters
-// keep the words in an array and check if reversed
+
 
 
   const strArray = str.match(/[a-zA-Z]+/g) || [];
