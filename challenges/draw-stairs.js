@@ -13,9 +13,20 @@
 
 */
 
-function drawStairs(n) {
+//Incomlete: must print the same way as the one above 
 
+function drawStairs(n) {
+    let asterisks = '';
+
+    if (1 <= n && n <= 100) {
+        for (let i = 1; i <= n; i += 1) {
+            asterisks += '*';
+            console.log(asterisks);
+        }
+    }
 }
+
+drawStairs(5);
 
 
 module.exports = drawStairs;
