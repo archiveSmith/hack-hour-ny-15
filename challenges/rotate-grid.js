@@ -17,7 +17,23 @@
  */
 
 function rotateGrid(grid, n) {
+  if(grid.length !== n) return 'uneven number of NxN';
 
+  const resultArr = [];
+
+  grid.forEach(element => {
+    resultArr.push([]);
+  });
+
+  for(let i = 0; i < n; i += 1) {
+    let subArr = grid[grid.length -1 - i];
+    
+    for(let j = 0; j < subArr.length; j += 1) {
+      resultArr[j].push(subArr[j])
+    }
+  }
+
+  return resultArr;
 }
 
 module.exports = rotateGrid;
