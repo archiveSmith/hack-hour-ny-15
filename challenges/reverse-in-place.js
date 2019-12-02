@@ -1,4 +1,4 @@
-'use strict';
+
 /**
  * Write a function to reverse an array in place
  *
@@ -14,7 +14,12 @@
  */
 
 function reverseInPlace(array) {
-
+  for (let start = 0; start < array.length / 2; start += 1) {
+    const end = array.length - 1 - start;
+    array[start] = array[end];
+    array[end] = array[start];
+  }
 }
 
+console.log(reverseInPlace([1, 2, 5, 7]));
 module.exports = reverseInPlace;
