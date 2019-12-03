@@ -2,22 +2,22 @@
  * Given an array of integers, find the highest product you can get from three of the integers.
  */
 
-// function highestProduct(array) {
-//   // grab first number two numbers and last number and store product
-//   //  grab second number and multiply all combos and store product
-//   let product = 1;
-//   for (let i = 0; i < array.length; i += 1) {
-//     for (let j = i + 1; j < array.length; j += 1) {
-//       for (let k = j + 1; k < array.length; k += 1) {
-//         if (array[i] * array[j] * array[k] > product) {
-//           product = array[i] * array[j] * array[k];
-//           // console.log(product);
-//         }
-//       }
-//     }
-//   }
-//   return product;
-// }
+function highestProduct(array) {
+  // grab first number two numbers and last number and store product
+  //  grab second number and multiply all combos and store product
+  let product = 1;
+  for (let i = 0; i < array.length; i += 1) {
+    for (let j = i + 1; j < array.length; j += 1) {
+      for (let k = j + 1; k < array.length; k += 1) {
+        if (array[i] * array[j] * array[k] > product) {
+          product = array[i] * array[j] * array[k];
+          // console.log(product);
+        }
+      }
+    }
+  }
+  return product;
+}
 
 // function highestProductII(arr) {
 //   arr.sort((a, b) => a - b);

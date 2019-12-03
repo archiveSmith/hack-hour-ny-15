@@ -13,7 +13,7 @@ function Node(value) {
   this.next = null;
 }
 
-function reverseInPlaceIterative(head) {
+function reverseLinkedList(head) {
   let prev = null;
   let temp;
   while (head) {
@@ -24,6 +24,32 @@ function reverseInPlaceIterative(head) {
   }
   return prev;
 }
+
+
+// // ITERATIVE APPROACH: O(n) time & O(1) space
+// function reverseInPlaceIterative(head) {
+//   let prev = null;
+//   let temp;
+//   while (head) {
+//     temp = head.next;
+//     head.next = prev;
+//     prev = head;
+//     head = temp;
+//   }
+//   return prev;
+// }
+//
+// // RECURSIVE APPROACH: O(n) time & O(n) space
+// function reverseInPlaceRecursive(head) {
+//   if (!head || !head.next) {
+//     return head;
+//   }
+//   let temp = reverse(head.next);
+//   head.next.next = head;
+//   head.next = undefined;
+//   return temp;
+// }
+
 
 // // RECURSIVE APPROACH: O(n) time & O(n) space
 // function reverseInPlaceRecursive(head) {
@@ -37,6 +63,6 @@ function reverseInPlaceIterative(head) {
 // }
 
 
-console.log(reverseInPlaceIterative());
+// console.log(reverseLinkedList());
 
 module.exports = { Node, reverseLinkedList };
