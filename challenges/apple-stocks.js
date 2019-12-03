@@ -20,6 +20,8 @@ calculate profit along the array.
 */
 
 const highestProfit = (apple_stock) => {
+  if (!apple_stock) return 0;
+
   let maxProfit = 0;
 
   for (let i = 0; i < apple_stock.length; i += 1) {
@@ -35,5 +37,4 @@ const highestProfit = (apple_stock) => {
   return maxProfit;
 };
 
-console.log(highestProfit([1000, 500, 1500, 2000, 0]));
 module.exports = { highestProfit };
