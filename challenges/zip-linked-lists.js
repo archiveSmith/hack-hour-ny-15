@@ -6,29 +6,28 @@
  * BONUS: Do this in place
  */
 
-
 function Node(val) {
   this.value = val;
   this.next = null;
 }
 
+const l1 = new Node(1);
+l1.next = new Node(2);
+l1.next.next = new Node(30);
+const l2 = new Node('a');
+l2.next = new Node('b');
+l2.next.next = new Node('c');
 
 function zip(l1, l2) {
-  const current1 = l1;
-  console.log(current1);
-  const current2 = l2;
-  while (l1 && l2) {
-    const snip1 = current1.next;
-    current1.next = current2;
-  }
+
 }
 
-const left = new Node(1);
-left.next = new Node(2);
-left.next.next = new Node(3);
-const right = new Node('a');
-right.next = new Node('b');
-right.next.next = new Node('c');
+// const left = new Node(1);
+// left.next = new Node(2);
+// left.next.next = new Node(30);
+// const right = new Node('a');
+// right.next = new Node('b');
+// right.next.next = new Node('c');
 
-console.log(zip(left, right));
+zip(currentL, currentR);
 module.exports = { Node, zip };
