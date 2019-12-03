@@ -10,19 +10,19 @@
 function Stack() {
   // body...
   this.storage = {};
-  this.index = 0;
+  this.length = 0;
 }
 Stack.prototype.push = function (value) {
   if (this.storage[value] === undefined) {
-    this.storage[this.index] = value;
-    this.index += 1;
+    this.storage[this.length] = value;
+    this.length += 1;
   }
-  return this.index;
+  return this.length;
 };
 Stack.prototype.pop = function () {
-  const value = this.storage[this.index - 1];
-  delete this.storage[this.index - 1];
-  this.index -= 1;
+  const value = this.storage[this.length - 1];
+  delete this.storage[this.length - 1];
+  this.length -= 1;
   return value;
 };
 Stack.prototype.getMax = function () {
@@ -37,12 +37,13 @@ Stack.prototype.getMax = function () {
   return maxVal;
 };
 
-// const newStuff = new Stack();
-// console.log(newStuff.push(3));
-// console.log(newStuff.push(5));
-// console.log(newStuff.push(7));
-// console.log(newStuff.push(10));
-// // console.log(newStuff.pop());
-// console.log(newStuff.getMax());
+const newStuff = new Stack();
+console.log(newStuff.push(20));
+console.log(newStuff.push(3));
+console.log(newStuff.push(5));
+console.log(newStuff.push(7));
+console.log(newStuff.push(10));
+console.log(newStuff);
+console.log(newStuff.getMax());
 
 module.exports = Stack;

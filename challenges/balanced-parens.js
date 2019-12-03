@@ -25,45 +25,6 @@
  */
 
 function balancedParens(input) {
-  // // check the number of parens for each input
-  // //  of they're even, they're balanced, if they're odd, then they're false
-  // //  assign opening parens
-  // //   assign closing parens
-
-  // const openingParen = '(';
-  // const closingParen = ')';
-  // const openingCurly = '{';
-  // const closingCurly = '}';
-  // const openingBracket = '[';
-  // const closingBracket = ']';
-
-  // let openingParenCount = 0;
-  // let closingParenCount = 0;
-  // let openingCurlyCount = 0;
-  // let closingCurlyCount = 0;
-  // let openingBracketCount = 0;
-  // let closingBracketCount = 0;
-
-
-  // for (let i = 0; i < input.length; i++) {
-  //   const curr = input[i];
-
-  //   if (curr === openingParen) openingParenCount += 1;
-  //   if (curr === closingParen) closingParenCount += 1;
-  //   if (curr === openingCurly) openingCurlyCount += 1;
-  //   if (curr === closingCurly) closingCurlyCount += 1;
-  //   if (curr === openingBracket) openingBracketCount += 1;
-  //   if (curr === closingBracket) closingBracketCount += 1;
-  // }
-
-  // // eslint-disable-next-line max-len
-  // //  const sum = (openingParenCount + closingParenCount + openingCurlyCount + closingCurlyCount + openingBracketCount + closingBracketCount);
-
-  // return (openingParenCount === closingParenCount && openingCurlyCount === closingCurlyCount && openingBracketCount === closingBracketCount);
-
-  // // return (sum % 2 === 0);
-
-
   //   create a stack to hold the current
 
   const stackTrack = [];

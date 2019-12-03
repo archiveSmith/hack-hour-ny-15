@@ -95,7 +95,7 @@ function subsetSumRecursive(array, target) {
 }
 
 
-// Iish Dave Approach
+// Irish Dave's Approach
 function matchWord(str) {
   if (!str) return true;
   // clean up with regex
