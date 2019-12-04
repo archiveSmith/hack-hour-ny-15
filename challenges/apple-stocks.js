@@ -20,23 +20,23 @@ calculate profit along the array.
 */
 
 const highestProfit = (appleStock) => {
-//   if (!Array.isArray(appleStock) || appleStock.length <= 1) return 0;
-//   let maxProfit = appleStock[1] - appleStock[0];
+  if (!Array.isArray(appleStock) || appleStock.length <= 1) return 0;
+  let maxProfit = appleStock[1] - appleStock[0];
 
-//   for (let i = 0; i < appleStock.length - 1; i += 1) {
-//     const prevQuote = appleStock[i];
-//     const curQuote = appleStock[i + 1];
-//     let curDiff = 0;
-//     if ((curQuote - prevQuote) > curDiff) {
-//       curDiff = curQuote - prevQuote;
-//       if (maxProfit < curDiff) {
-//         maxProfit = curDiff;
-//         curDiff = null;
-//       }
-//     }
-//   }
-//   if (maxProfit <= 0) return 0;
-//   return maxProfit;
+  for (let i = 0; i < appleStock.length - 1; i += 1) {
+    const prevQuote = appleStock[i];
+    const curQuote = appleStock[i + 1];
+    let curDiff = 0;
+    if ((curQuote - prevQuote) > curDiff) {
+      curDiff = curQuote - prevQuote;
+      if (maxProfit < curDiff) {
+        maxProfit = curDiff;
+        curDiff = null;
+      }
+    }
+  }
+  if (maxProfit <= 0) return 0;
+  return maxProfit;
 };
 
 module.exports = { highestProfit };
