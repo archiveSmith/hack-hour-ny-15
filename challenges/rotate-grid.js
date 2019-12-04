@@ -32,6 +32,35 @@ function rotateGrid(grid, n) {
   return grid;
 }
 
+// function rotateGrid(grid, size) {
+//
+//     // swap in place
+//     for (let level = 0; level < Math.floor(size / 2); level += 1) {
+//       for (let inner = level; inner < size - 1 - level; inner += 1) {
+//         swapClockwise(grid, size, level, inner);
+//       }
+//     }
+//     return grid;
+//   }
+//
+//   function swapClockwise(grid, size, level, inner) {
+//
+//     // grid[level][inner] // TOP LEFT
+//     // grid[inner][size - 1 - level] // TOP RIGHT
+//     // grid[size - 1 - level][size - 1 - inner] // RIGHT BOTTOM
+//     // grid[size - 1 - inner][level] // LEFT BOTTOM
+//     // store TOP LEFT
+//     let temp = grid[level][inner];
+//     // move BOTTOM LEFT to TOP LEFT
+//     grid[level][inner] = grid[size - 1 - inner][level];
+//     // move BOTTOM RIGHT to BOTTOM LEFT
+//     grid[size - 1 - inner][level] = grid[size - 1 - level][size - 1 - inner]
+//     // move TOP RIGHT to BOTTOM RIGHT
+//     grid[size - 1 - level][size - 1 - inner] = grid[inner][size - 1 - level]
+//     // move TOP LEFT to TOP RIGHT
+//     grid[inner][size - 1 - level] = temp
+//   }
+
 // console.log(rotateGrid([[1, 2, 3],
 //   [4, 5, 6],
 //   [7, 8, 9]], 3));
