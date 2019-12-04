@@ -27,8 +27,4 @@ function twoSum(arr, n) {
   return false;
 }
 
-console.log(twoSum([1, 3, 5, 6], 8));
-console.log(twoSum([1, 3, 5, 6], 45));
-// console.log([3, 1, 6, 8].sort())
-
 module.exports = twoSum;
