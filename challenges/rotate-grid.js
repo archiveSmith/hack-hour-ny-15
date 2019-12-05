@@ -16,6 +16,27 @@
  * BONUS: Do this in place
  */
 
+//in place solution - need 4 pointers
+//Top Left grid[level][inner]
+//Top Right grid[inner][size-1-level]
+//Bottom Right grid[size-1-level][size-1-inner]
+//Bottom Left grid[size-1-inner][level]
+
+//
+//for(let level=0; level < Math.floor(size/2); level+=1){
+// for(let inner=level; inner<size-1-level; inner+=1){
+//  swapClockwise(grid, size, level, inner)
+// }
+//}
+//return grid;
+//function swapClockwise(grid, size, level, inner){
+// let temp =grid[level][inner];
+// grid[level][inner] = grid[size-1-inner][level]
+// grid[size-1-inner][level]= grid[size-1-level][size-1-inner];
+// grid[size-1-level][size-1-inner] = grid[inner][size-1-level];
+// grid[inner][size-1-level] = temp;
+//}
+
 function rotateGrid(grid, n) {
    const newArray = [];
    let index=0;
