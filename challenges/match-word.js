@@ -13,12 +13,13 @@
 function matchWord(str) {
   //case insensitive - convert to lowercase first
   //remove leading and trailing special chars
+  //
   //loop through stripped string, checking if first char matches end char. if any special char in between, change specialCharNeeded variable to true
   //if specialCharNeeded var is true, and both sides match, then return true
   let toLowerCaseArr = str.toLowerCase().split("");
   //   let noSpecialChar = toLowerCaseArr;
   let specialCharNeeded = false;
-  let onlySpecialCharRegex = /[^A-Za-z0-9]/;
+  let onlySpecialCharRegex = /[^A-Za-z_\s]/;
 
   for (let i = 0; i < toLowerCaseArr.length - 1; i++) {
     for (let j = toLowerCaseArr.length - 1; j >= 0; j--) {
