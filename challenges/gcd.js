@@ -33,6 +33,4 @@ function gcd(a, b) {
   return highestDivisor;
 }
 
-console.log(gcd(4, 8));
-
 module.exports = gcd;
