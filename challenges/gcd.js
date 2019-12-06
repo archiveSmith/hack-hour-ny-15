@@ -8,7 +8,15 @@
  */
 
 function gcd(a, b) {
-
+  let greatestCommonDivisor = 1;
+  let minInteger = Math.min(a, b);
+  while (minInteger > 0) {
+    if (a % minInteger === 0 && b % minInteger === 0 && minInteger > greatestCommonDivisor) {
+      greatestCommonDivisor = minInteger;
+    }
+    minInteger -= 1;
+  }
+  return greatestCommonDivisor;
 }
 
 module.exports = gcd;

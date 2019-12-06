@@ -28,11 +28,12 @@ Stack.prototype.pop = function () {
 };
 
 Stack.prototype.getMax = function () {
+  if (this.index === 0) return undefined;
   let max = 0;
   let currentEl;
   for (const el of this.storage) {
     currentEl = el;
-    if (currentEl >= max) {
+    if (currentEl > max) {
       max = currentEl;
     }
   }
@@ -41,14 +42,14 @@ Stack.prototype.getMax = function () {
 
 
 // const myStack = new Stack();
-// myStack.push(1);
+// myStack.push(25);
 // myStack.push(2);
-// myStack.push(3);
-// myStack.push(4);
-// myStack.push(5);
+// myStack.push(15);
+// myStack.push(32);
+// myStack.push(9);
 
 // console.log(myStack);
-// console.log(myStack.push())
+// console.log(myStack.push());
 
 // myStack.pop();
 
