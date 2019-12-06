@@ -13,18 +13,18 @@ function BinaryTree(val) {
 }
 
 function validBST(tree) {
-  let curTree = tree.value;
-  let left = curTree.left.value;
-  let right = curTree.right.value;
 
-  while (curTree) {
-  if (curTree.left > curTree || curTree.right > curTree) {
-    return false; 
-  } else {
-    curTree = left;
-  }
+  const treeTransverser = tree => {
+    if (tree === null) return true;
 
-  }
+    if (tree !== null && tree.value < tree.left.value) return false;
+    if (tree !== null && tree.value > tree.right.value) return false;
+    const leftTree = treeTransverser(tree.left);
+    const rightTree = treeTransverser(tree.right);
+    // return false if either the left or the right is false;
+    return (!leftTree || !rightTree) ? false : true;
+    }
+    return treeTransverser(tree);
 }
 
 module.exports = {BinaryTree: BinaryTree, validBST: validBST};
