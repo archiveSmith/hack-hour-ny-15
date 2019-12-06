@@ -12,8 +12,22 @@ function BinaryTree(val) {
     this.right = null;
 }
 
-function validBST(tree) {
 
+function validBST(tree) {
+    //check if tree.left is not null and tree.right is not null - meaning there are more branches underneath
+    //if so, check if tree.left < tree.right
+    if (tree.left != null || tree.right != null){
+        if (tree.right < tree.left){
+            return false
+        } else if (tree.left > tree.left) {
+            return 
+        }
+
+    }
 }
+
+const newBinaryTree = BinaryTree(10)
+console.log(newBinaryTree)
+
 
 module.exports = {BinaryTree: BinaryTree, validBST: validBST};
