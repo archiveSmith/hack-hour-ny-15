@@ -8,7 +8,31 @@
  */
 
 function gcd(a, b) {
+  let tempA = a;
+  let tempB = b;
 
+  if (a === 0) {
+    return b;
+  }
+  if (b === 0) {
+    return a;
+  }
+  if (a < 0) {
+    tempA *= -1;
+  }
+  if (b < 0) {
+    tempB *= -1;
+  }
+  let highestDivisor = 1;
+
+  for (let i = 0; i <= tempA; i++) {
+    if (tempA % i === 0 && tempB % i === 0) {
+      highestDivisor = i;
+    }
+  }
+  return highestDivisor;
 }
+
+console.log(gcd(4, 8));
 
 module.exports = gcd;
