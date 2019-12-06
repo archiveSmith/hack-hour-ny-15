@@ -8,7 +8,16 @@
  */
 
 function gcd(a, b) {
+  let greatest = null;
+  for (let i = 1; i <= a; i += 1) {
+    let curGreatest = null;
+    if ((a % i === 0 && b % i === 0) && curGreatest < i) {
+      curGreatest = i;
+      if (greatest < curGreatest) greatest = curGreatest;
+    }
+  }
 
+  return greatest;
 }
 
 module.exports = gcd;
