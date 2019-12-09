@@ -15,7 +15,7 @@ function BinaryTree(val) {
 function validBST(tree) {
   const treeTraverser = (tree) => {
     if(tree === null) {
-        console.log('nothing here')
+        console.log('this node is cool')
         return true;
     }
     if(tree.left !== null && tree.left.value > tree.value) {
@@ -34,15 +34,15 @@ function validBST(tree) {
   return treeTraverser(tree);
 }
 
-const dates = new BinaryTree(27);
-dates.left = new BinaryTree(15);
-dates.right = new BinaryTree(29);
-dates.left.left = new BinaryTree(3);
-dates.left.right = new BinaryTree(17);
-dates.right.left = new BinaryTree(28);
-dates.right.right = new BinaryTree(1);
-console.log(dates);
+// const dates = new BinaryTree(27);
+// dates.left = new BinaryTree(15);
+// dates.right = new BinaryTree(29);
+// dates.left.left = new BinaryTree(3);
+// dates.left.right = new BinaryTree(17);
+// dates.right.left = new BinaryTree(28);
+// dates.right.right = new BinaryTree(44);
+// console.log(dates);
 
-console.log(validBST(dates));
+// console.log(validBST(dates));
 
 module.exports = {BinaryTree: BinaryTree, validBST: validBST};
